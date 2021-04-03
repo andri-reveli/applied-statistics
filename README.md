@@ -1,2 +1,2 @@
 # applied-statistics
-Applied ststistics project repostory
+Applied statistics project repository
