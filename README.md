@@ -45,6 +45,13 @@ project
 |   *---string.util
 ```
 - Prefer small source files over a single monolythic file
+- If you notice any errors, undefined behaviors, not working code on a different operating system create a new issue in `Issues` tab on Github, write a description, add a label (optional) and add me as a reviewer
+- If you want to suggest an improvement or new feature create a new pull request in `Pull requests` tab on Github and a desrciption with a proper label
+- Not implemented features should contain a similiar comment:
+```c
+/// TODO write here what you are planing to do in the future
+void func();
+```
 
 ### Committing
 Never commit on `master` branch i will not approve, but always commit on a new branch and tell me to review it before merging by adding me as a reviewer in the pull request page or let me know that you have committed in a dm.
