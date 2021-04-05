@@ -15,7 +15,7 @@ Prefer `snake_case` over `camelCase` for variable and function naming. Prefer `k
 - **lib** for libraries
 
 #### Spacing
-Prefer using *K&R style* when writing functions, if-else statements, loops etc.
+Prefer using *K&R style* when writing functions, if-else statements (Stroustroup style in fact), loops etc.
 ```c
 int func(int var1, char var2) {
     if (var1 < 0) {
