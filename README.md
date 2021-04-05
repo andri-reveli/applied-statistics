@@ -46,7 +46,8 @@ project
 ```
 - Prefer small source files over a single monolythic file
 
-
+### Committing
+Never commit on `master` branch i will not approve, but always commit on a new branch and tell me to review it before merging by adding me as a reviewer in the pull request page or let me know that you have committed in a dm.
 
 
 
