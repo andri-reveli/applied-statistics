@@ -52,6 +52,7 @@ project
 /// TODO write here what you are planing to do in the future
 void func();
 ```
+- Always check the `Projects` tab on Github to stay updated with what is planned to be done in this project and try to go for issues and features with a high priority label and that have no one who is assigned to work with it
 
 ### Committing
 Never commit on `master` branch i will not approve, but always commit on a new branch and tell me to review it before merging by adding me as a reviewer in the pull request page or let me know that you have committed in a dm.
