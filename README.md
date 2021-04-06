@@ -10,12 +10,12 @@ Applied statistics project repository
 1 tab = 4 spaces
 
 #### Casing  
-Prefer `snake_case` over `camelCase` for variable and function naming. Prefer `kebab-case` for folder naming or even better use just a single word i.e. 
+Prefer `snake_case` over `camelCase` for variable and function naming. Prefer `kebab-case` for folder naming or even better use just a single word e.g. 
 - **util** for utilities
 - **lib** for libraries
 
 #### Spacing
-Prefer using *K&R style* when writing functions, if-else statements (Stroustroup style in fact), loops and leave a space before and after an math operation i.e.
+Prefer using *K&R style* when writing functions, if-else statements (Stroustroup style in fact), loops and leave a space before and after an math operation e.g.
 ```c
 int func(int var1, char var2) {
     if (var1 < 0) {
@@ -31,8 +31,8 @@ int func(int var1, char var2) {
 ```
 
 ### Project organization
-- If certain functions belong to the same domain they should reside in the same source file i.e. `double sqrt(double x)`, `double pow(double base, double exp)` belong to a mathematical domain so they must reside in a `math.*` file, meanwhile `string to_lower(string s)`, `string to_upper(string s)`, `string substring(int start, int end)` perform string operations thus blong to a `string.*` file
-- If certain files belong to the same domain they should reside in same directory i.e.
+- If certain functions belong to the same domain they should reside in the same source file e.g. `double sqrt(double x)`, `double pow(double base, double exp)` belong to a mathematical domain so they must reside in a `math.*` file, meanwhile `string to_lower(string s)`, `string to_upper(string s)`, `string substring(int start, int end)` perform string operations thus blong to a `string.*` file
+- If certain files belong to the same domain they should reside in same directory e.g.
 ```
 project
 |
