@@ -15,7 +15,7 @@ Prefer `snake_case` over `camelCase` for variable and function naming. Prefer `k
 - **lib** for libraries
 
 #### Spacing
-Prefer using *K&R style* when writing functions, if-else statements (Stroustroup style in fact), loops and leave a space before and after an math operation e.g.
+Prefer using *K&R style* when writing functions, if-else statements (Stroustrup style in fact), loops and leave a space before and after an math operation e.g.
 ```c
 int func(int var1, char var2) {
     if (var1 < 0) {
@@ -31,7 +31,7 @@ int func(int var1, char var2) {
 ```
 
 ### Project organization
-- If certain functions belong to the same domain they should reside in the same source file e.g. `double sqrt(double x)`, `double pow(double base, double exp)` belong to a mathematical domain so they must reside in a `math.*` file, meanwhile `string to_lower(string s)`, `string to_upper(string s)`, `string substring(int start, int end)` perform string operations thus blong to a `string.*` file
+- If certain functions belong to the same domain they should reside in the same source file e.g. `double sqrt(double x)`, `double pow(double base, double exp)` belong to a mathematical domain so they must reside in a `math.*` file, meanwhile `string to_lower(string s)`, `string to_upper(string s)`, `string substring(int start, int end)` perform string operations thus they belong to a `string.*` file
 - If certain files belong to the same domain they should reside in same directory e.g.
 ```
 project
@@ -44,10 +44,10 @@ project
 |   |
 |   *---string.util
 ```
-- Prefer small source files over a single monolythic file
+- Prefer small source files over a single monolithic file
 - If you notice any errors, undefined behaviors, not working code on a different operating system create a new issue in `Issues` tab on Github, write a description, add a label (optional) and add me as a reviewer
-- If you want to suggest an improvement or new feature create a new pull request in `Pull requests` tab on Github and a desrciption with a proper label
-- Not implemented features should contain a similiar comment:
+- If you want to suggest an improvement or new features create a new pull request in `Pull requests` tab on Github and add a description with a proper label
+- Not implemented features should contain a similar comment:
 ```c
 /// TODO write here what you are planing to do in the future
 void func();
@@ -56,33 +56,4 @@ void func();
 
 ### Committing
 - Please **DON'T** commit on `master` branch, but always commit on a new branch and tell me to review it before merging by adding me as a reviewer in the pull request page or let me know that you have committed in a dm.
-- Try to do small committs locally as it reduces the risk of conflicts, but do **not** push small commits on Github as they must be reivewed individually before merge
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Try to do small commits locally as it reduces the risk of conflicts, but do **not** push small commits on Github as they must be reviewed individually before merge
