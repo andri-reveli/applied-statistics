@@ -7,7 +7,7 @@ Ndikimi i turizmit ne ekonomine e Shqiperise
     - Trajton disa hipoteza te vecanta si:
         - A ndikon sezoni turistik ne rritjen e pages mesatare mujore ne Shqiperi?
         - A ndikon sezoni turistik ne rritjen e shkalles se punesimit?
-        - A ka nje lidhje midis sezonit tiristik dhe rritjes se cmimeve te konsumit?
+        - A ka nje lidhje midis sezonit turistik dhe rritjes se cmimeve te konsumit?
 
 2. Ku do te merren te dhenat (link)?
     - Burimi kryesor i te dhenave do te jete INSTAT
