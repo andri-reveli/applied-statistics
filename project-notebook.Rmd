@@ -1,0 +1,20 @@
+---
+title: "Projekt"
+output: html_notebook
+author:
+    - Anisa  Kapri
+    - Andri Reveli
+    - Dionis Hysko
+date: 2021-06-01
+---
+
+
+## Hyrje
+
+Librarite dhe paketat qe do te perdoren ne kete projekt:
+
+```{r}
+library(esquisse)
+source("clean.R")
+```
+
