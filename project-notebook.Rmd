@@ -16,7 +16,48 @@ Librarite dhe paketat qe do te perdoren ne kete projekt:
 ```{r}
 library(esquisse)
 library(ggplot2)
+library(reshape)
 
 source("clean.R")
 ```
 
+
+bejme nje test $\chi$-katror
+
+```{r}
+# test hi katror per pavaresine e hyrje daljeve nga viti
+
+# read the data
+x = read.csv2("datasets/tabela-e-hyrjeve.csv")
+
+# convert to contigency table
+y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
+row.names(y) = x$Year
+colnames(y) = c("Shqiptare", "Te huaj")
+y = as.table(y)
+print(y)
+
+# chi square test
+chisq.test(y)
+```
+
+
+diagrami
+
+```{r}
+to_plot = data.frame(
+    Viti = x$Year,
+    Shqiptare = x$Albania.citizens,
+    Te_huaj = x$Foreign.citizens
+)
+melted = melt(to_plot, id="Viti")
+
+ggplot(
+    melted, 
+    aes(x = Viti, y = value, fill = variable)
+) + 
+    geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
+    labs(y = "Hyrje", title = "Tabela e hyrjeve")
+```
+
+INTERPRETIM
