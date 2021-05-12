@@ -22,7 +22,7 @@ source("clean.R")
 ```
 
 
-bejme nje test $\chi$-katror
+
 
 ```{r}
 # test hi katror per pavaresine e hyrje daljeve nga viti
@@ -30,15 +30,15 @@ bejme nje test $\chi$-katror
 # read the data
 x = read.csv2("datasets/tabela-e-hyrjeve.csv")
 
-# convert to contigency table
-y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
-row.names(y) = x$Year
-colnames(y) = c("Shqiptare", "Te huaj")
-y = as.table(y)
-print(y)
+## convert to contigency table
+#y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
+#row.names(y) = x$Year
+#colnames(y) = c("Shqiptare", "Te huaj")
+#y = as.table(y)
+print(x)
 
-# chi square test
-chisq.test(y)
+## chi square test
+#chisq.test(y)
 ```
 
 

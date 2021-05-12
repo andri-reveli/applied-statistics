@@ -1766,13 +1766,8 @@ pre code {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShlc3F1aXNzZSlcbmBgYCJ9 -->
 <pre class="r"><code>library(esquisse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdodG1sdG9vbHMnOlxuICBtZXRob2QgICAgICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWwgICAgICAgICAgIHRvb2xzOnJzdHVkaW9cbiAgcHJpbnQuc2hpbnkudGFnICAgICAgdG9vbHM6cnN0dWRpb1xuICBwcmludC5zaGlueS50YWcubGlzdCB0b29sczpyc3R1ZGlvXG5SZWdpc3RlcmVkIFMzIG1ldGhvZCBvdmVyd3JpdHRlbiBieSAnaHRtbHdpZGdldHMnOlxuICBtZXRob2QgICAgICAgICAgIGZyb20gICAgICAgICBcbiAgcHJpbnQuaHRtbHdpZGdldCB0b29sczpyc3R1ZGlvXG5SZWdpc3RlcmVkIFMzIG1ldGhvZCBvdmVyd3JpdHRlbiBieSAnZGF0YS50YWJsZSc6XG4gIG1ldGhvZCAgICAgICAgICAgZnJvbVxuICBwcmludC5kYXRhLnRhYmxlICAgICBcbiJ9 -->
-<pre><code>Registered S3 methods overwritten by &#39;htmltools&#39;:
-  method               from         
-  print.html           tools:rstudio
-  print.shiny.tag      tools:rstudio
-  print.shiny.tag.list tools:rstudio
-Registered S3 method overwritten by &#39;htmlwidgets&#39;:
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2h0bWx3aWRnZXRzJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWx3aWRnZXQgdG9vbHM6cnN0dWRpb1xuUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2RhdGEudGFibGUnOlxuICBtZXRob2QgICAgICAgICAgIGZyb21cbiAgcHJpbnQuZGF0YS50YWJsZSAgICAgXG4ifQ== -->
+<pre><code>Registered S3 method overwritten by &#39;htmlwidgets&#39;:
   method           from         
   print.htmlwidget tools:rstudio
 Registered S3 method overwritten by &#39;data.table&#39;:
@@ -1787,43 +1782,33 @@ source(&quot;clean.R&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>bejme nje test <span class="math inline">\(\chi\)</span>-katror</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB0ZXN0IGhpIGthdHJvciBwZXIgcGF2YXJlc2luZSBlIGh5cmplIGRhbGpldmUgbmdhIHZpdGlcblxuIyByZWFkIHRoZSBkYXRhXG54ID0gcmVhZC5jc3YyKFwiZGF0YXNldHMvdGFiZWxhLWUtaHlyamV2ZS5jc3ZcIilcblxuIyBjb252ZXJ0IHRvIGNvbnRpZ2VuY3kgdGFibGVcbnkgPSBhcy5tYXRyaXgoZGF0YS5mcmFtZSh4JEFsYmFuaWEuY2l0aXplbnMsIHgkRm9yZWlnbi5jaXRpemVucykpXG5yb3cubmFtZXMoeSkgPSB4JFllYXJcbmNvbG5hbWVzKHkpID0gYyhcIlNocWlwdGFyZVwiLCBcIlRlIGh1YWpcIilcbnkgPSBhcy50YWJsZSh5KVxucHJpbnQoeSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB0ZXN0IGhpIGthdHJvciBwZXIgcGF2YXJlc2luZSBlIGh5cmplIGRhbGpldmUgbmdhIHZpdGlcblxuIyByZWFkIHRoZSBkYXRhXG54ID0gcmVhZC5jc3YyKFwiZGF0YXNldHMvdGFiZWxhLWUtaHlyamV2ZS5jc3ZcIilcblxuIyMgY29udmVydCB0byBjb250aWdlbmN5IHRhYmxlXG4jeSA9IGFzLm1hdHJpeChkYXRhLmZyYW1lKHgkQWxiYW5pYS5jaXRpemVucywgeCRGb3JlaWduLmNpdGl6ZW5zKSlcbiNyb3cubmFtZXMoeSkgPSB4JFllYXJcbiNjb2xuYW1lcyh5KSA9IGMoXCJTaHFpcHRhcmVcIiwgXCJUZSBodWFqXCIpXG4jeSA9IGFzLnRhYmxlKHkpXG5wcmludCh4KVxuYGBgIn0= -->
 <pre class="r"><code># test hi katror per pavaresine e hyrje daljeve nga viti
 
 # read the data
 x = read.csv2(&quot;datasets/tabela-e-hyrjeve.csv&quot;)
 
-# convert to contigency table
-y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
-row.names(y) = x$Year
-colnames(y) = c(&quot;Shqiptare&quot;, &quot;Te huaj&quot;)
-y = as.table(y)
-print(y)</code></pre>
+## convert to contigency table
+#y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
+#row.names(y) = x$Year
+#colnames(y) = c(&quot;Shqiptare&quot;, &quot;Te huaj&quot;)
+#y = as.table(y)
+print(x)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBTaHFpcHRhcmUgVGUgaHVhalxuMjAxNCAgIDM4NzIwMTAgMzY3MjU5MVxuMjAxNSAgIDQwOTg1MjYgNDEzMTI0MlxuMjAxNiAgIDQ1OTI1MDMgNDczNTUxMVxuMjAxNyAgIDQ4NTE2MjIgNTExNzcwMFxuMjAxOCAgIDUzMTk3MTcgNTkyNjgwM1xuMjAxOSAgIDU2OTc3MjkgNjQwNjAzOFxuMjAyMCAgIDI3NjE1OTkgMjY1NzgxOFxuIn0= -->
-<pre><code>     Shqiptare Te huaj
-2014   3872010 3672591
-2015   4098526 4131242
-2016   4592503 4735511
-2017   4851622 5117700
-2018   5319717 5926803
-2019   5697729 6406038
-2020   2761599 2657818</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjaGkgc3F1YXJlIHRlc3RcbmNoaXNxLnRlc3QoeSlcbmBgYCJ9 -->
-<pre class="r"><code># chi square test
-chisq.test(y)</code></pre>
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6Mywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZlssM10gWzcgw5cgM10iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBd3R5aVREbWl1QmlZR0JnWm1BQlFtWldJSk9CTlRURVRkZUNnWUdGQ2NoaEJBcHpndWdLb0NKaHNFb0dCbDRnWmdlaWUwQjhINGdmQVBGRElINEV4SStCK0FsY2piVW9GNE5kNXowR04rRnlCaS8yWlF5Qk9xb01ZUjhPTW1ncDE4UFZXSER4TTloenJtTHdjQkpuOEJObllZaktuOHlRdUg4YWcwYWZGSm9qV1BNU2MxT0xnUXdCcUpOQmdpeVJxWWxGVUxhQVkwNVNZbDVtb2w1eVprbG1WV3BlTVV6Y0xiOG9OVE05RHlHT2FqQm5VWDY1SHN4d2tLdVlHaGpBZ0IzZEJjazVpY1V3RjhBRXVWSVNTeEwxMG9xQStvRzhmMmhhMlBNTFNqTHpRVll5Z2NLUEZVMHpZeEdhQUg5cEhzZ2xLYnJKR2FWNTJicEdJQXZBMGhEQUMyV3pJN0daSVZZeS9ZY2F4UW8xaWkwMUx6MHpMeFhtOXB6RXBOUWNLSWNQNkdPd2gvVUtpakx6U21BK0FZb1c2NVhrbHlUQzFIRWw1K2ZBUk1CK1kvZ0hBSmFaQ09jMkFnQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["int"],"align":["right"]},{"label":["Albania.citizens"],"name":[2],"type":["int"],"align":["right"]},{"label":["Foreign.citizens"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2014","2":"3872010","3":"3672591"},{"1":"2015","2":"4098526","3":"4131242"},{"1":"2016","2":"4592503","3":"4735511"},{"1":"2017","2":"4851622","3":"5117700"},{"1":"2018","2":"5319717","3":"5926803"},{"1":"2019","2":"5697729","3":"6406038"},{"1":"2020","2":"2761599","3":"2657818"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIyBjaGkgc3F1YXJlIHRlc3RcbiNjaGlzcS50ZXN0KHkpXG5gYGAifQ== -->
+<pre class="r"><code>
+## chi square test
+#chisq.test(y)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdFBlYXJzb24ncyBDaGktc3F1YXJlZCB0ZXN0XG5cbmRhdGE6ICB5XG5YLXNxdWFyZWQgPSA1NzgxOCwgZGYgPSA2LCBwLXZhbHVlIDwgMi4yZS0xNlxuIn0= -->
-<pre><code>
-    Pearson&#39;s Chi-squared test
-
-data:  y
-X-squared = 57818, df = 6, p-value &lt; 2.2e-16</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>diagrami</p>
@@ -1853,7 +1838,7 @@ ggplot(
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUHJvamVrdCIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjoKICAgIC0gQW5pc2EgS2FwcmkKICAgIC0gQW5kcmkgUmV2ZWxpCiAgICAtIERpb25pcyBIeXNrbwpkYXRlOiAyMDIxLTA2LTAxCi0tLQoKCiMjIEh5cmplCgpMaWJyYXJpdGUgZGhlIHBha2V0YXQgcWUgZG8gdGUgcGVyZG9yZW4gbmUga2V0ZSBwcm9qZWt0OgoKYGBge3J9CmxpYnJhcnkoZXNxdWlzc2UpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyZXNoYXBlKQoKc291cmNlKCJjbGVhbi5SIikKYGBgCgoKYmVqbWUgbmplIHRlc3QgJFxjaGkkLWthdHJvcgoKYGBge3J9CiMgdGVzdCBoaSBrYXRyb3IgcGVyIHBhdmFyZXNpbmUgZSBoeXJqZSBkYWxqZXZlIG5nYSB2aXRpCgojIHJlYWQgdGhlIGRhdGEKeCA9IHJlYWQuY3N2MigiZGF0YXNldHMvdGFiZWxhLWUtaHlyamV2ZS5jc3YiKQoKIyBjb252ZXJ0IHRvIGNvbnRpZ2VuY3kgdGFibGUKeSA9IGFzLm1hdHJpeChkYXRhLmZyYW1lKHgkQWxiYW5pYS5jaXRpemVucywgeCRGb3JlaWduLmNpdGl6ZW5zKSkKcm93Lm5hbWVzKHkpID0geCRZZWFyCmNvbG5hbWVzKHkpID0gYygiU2hxaXB0YXJlIiwgIlRlIGh1YWoiKQp5ID0gYXMudGFibGUoeSkKcHJpbnQoeSkKCiMgY2hpIHNxdWFyZSB0ZXN0CmNoaXNxLnRlc3QoeSkKYGBgCgoKZGlhZ3JhbWkKCmBgYHtyfQp0b19wbG90ID0gZGF0YS5mcmFtZSgKICAgIFZpdGkgPSB4JFllYXIsCiAgICBTaHFpcHRhcmUgPSB4JEFsYmFuaWEuY2l0aXplbnMsCiAgICBUZV9odWFqID0geCRGb3JlaWduLmNpdGl6ZW5zCikKbWVsdGVkID0gbWVsdCh0b19wbG90LCBpZD0iVml0aSIpCgpnZ3Bsb3QoCiAgICBtZWx0ZWQsIAogICAgYWVzKHggPSBWaXRpLCB5ID0gdmFsdWUsIGZpbGwgPSB2YXJpYWJsZSkKKSArIAogICAgZ2VvbV9iYXIoc3RhdD0iaWRlbnRpdHkiLHBvc2l0aW9uID0gImRvZGdlIiwgYWxwaGEgPSAwLjUpICsgCiAgICBsYWJzKHkgPSAiSHlyamUiLCB0aXRsZSA9ICJUYWJlbGEgZSBoeXJqZXZlIikKYGBgCgpJTlRFUlBSRVRJTQ==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUHJvamVrdCIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjoKICAgIC0gQW5pc2EgS2FwcmkKICAgIC0gQW5kcmkgUmV2ZWxpCiAgICAtIERpb25pcyBIeXNrbwpkYXRlOiAyMDIxLTA2LTAxCi0tLQoKCiMjIEh5cmplCgpMaWJyYXJpdGUgZGhlIHBha2V0YXQgcWUgZG8gdGUgcGVyZG9yZW4gbmUga2V0ZSBwcm9qZWt0OgoKYGBge3J9CmxpYnJhcnkoZXNxdWlzc2UpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShyZXNoYXBlKQoKc291cmNlKCJjbGVhbi5SIikKYGBgCgoKCgpgYGB7cn0KIyB0ZXN0IGhpIGthdHJvciBwZXIgcGF2YXJlc2luZSBlIGh5cmplIGRhbGpldmUgbmdhIHZpdGkKCiMgcmVhZCB0aGUgZGF0YQp4ID0gcmVhZC5jc3YyKCJkYXRhc2V0cy90YWJlbGEtZS1oeXJqZXZlLmNzdiIpCgojIyBjb252ZXJ0IHRvIGNvbnRpZ2VuY3kgdGFibGUKI3kgPSBhcy5tYXRyaXgoZGF0YS5mcmFtZSh4JEFsYmFuaWEuY2l0aXplbnMsIHgkRm9yZWlnbi5jaXRpemVucykpCiNyb3cubmFtZXMoeSkgPSB4JFllYXIKI2NvbG5hbWVzKHkpID0gYygiU2hxaXB0YXJlIiwgIlRlIGh1YWoiKQojeSA9IGFzLnRhYmxlKHkpCnByaW50KHgpCgojIyBjaGkgc3F1YXJlIHRlc3QKI2NoaXNxLnRlc3QoeSkKYGBgCgoKZGlhZ3JhbWkKCmBgYHtyfQp0b19wbG90ID0gZGF0YS5mcmFtZSgKICAgIFZpdGkgPSB4JFllYXIsCiAgICBTaHFpcHRhcmUgPSB4JEFsYmFuaWEuY2l0aXplbnMsCiAgICBUZV9odWFqID0geCRGb3JlaWduLmNpdGl6ZW5zCikKbWVsdGVkID0gbWVsdCh0b19wbG90LCBpZD0iVml0aSIpCgpnZ3Bsb3QoCiAgICBtZWx0ZWQsIAogICAgYWVzKHggPSBWaXRpLCB5ID0gdmFsdWUsIGZpbGwgPSB2YXJpYWJsZSkKKSArIAogICAgZ2VvbV9iYXIoc3RhdD0iaWRlbnRpdHkiLHBvc2l0aW9uID0gImRvZGdlIiwgYWxwaGEgPSAwLjUpICsgCiAgICBsYWJzKHkgPSAiSHlyamUiLCB0aXRsZSA9ICJUYWJlbGEgZSBoeXJqZXZlIikKYGBgCgpJTlRFUlBSRVRJTQ==</div>
 
 
 
