@@ -20,8 +20,8 @@ library(reshape)
 library(readxl)
 library(Rcmdr)
 
-source("clean.R")
-source("utils.R")
+source("scripts/clean.R")
+source("scripts/utils.R")
 ```
 
 
