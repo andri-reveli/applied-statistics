@@ -66,6 +66,9 @@ ggplot(
 INTERPRETIM
 
 
+
+Te dhenat vjetore
+
 ```{r}
 # read data
 hyrje = readXL(
@@ -76,6 +79,8 @@ hyrje = readXL(
     sheet="Sheet 1", 
     stringsAsFactors=TRUE
 )
+
+print(hyrje)
 
 # build data frame for each year
 hyrje2016 = build_vector(hyrje, 1, seq(2, 3))
@@ -93,12 +98,65 @@ attributes(year_based) = list(
 )
 
 # plot
-boxplot(year_based)
+boxplot(year_based, xlab = "Viti", ylab = "Hyrje te shtetasve te huaj")
 ```
+
+
+Te dhenat mujore
+
+```{r}
+# build data frame for each month
+
+hyrje_jan = build_vector(hyrje, 1, seq(4, 53, 12))
+hyrje_feb = build_vector(hyrje, 1, seq(5, 53, 12))
+hyrje_mar = build_vector(hyrje, 1, seq(6, 53, 12))
+hyrje_apr = build_vector(hyrje, 1, seq(7, 53, 12))
+hyrje_may = build_vector(hyrje, 1, seq(8, 53, 12))
+hyrje_jun = build_vector(hyrje, 1, seq(9, 53, 12))
+hyrje_jul = build_vector(hyrje, 1, seq(10, 53, 12))
+hyrje_aug = build_vector(hyrje, 1, seq(11, 53, 12))
+hyrje_sep = build_vector(hyrje, 1, seq(12, 53, 12))
+hyrje_oct = build_vector(hyrje, 1, seq(13, 53, 12))
+hyrje_nov = build_vector(hyrje, 1, seq(2, 53, 12))
+hyrje_dec = build_vector(hyrje, 1, seq(3, 53, 12))
+
+month_based = list(
+    hyrje_jan,
+    hyrje_feb,
+    hyrje_mar,
+    hyrje_apr,
+    hyrje_may,
+    hyrje_jun,
+    hyrje_jul,
+    hyrje_aug,
+    hyrje_sep,
+    hyrje_oct,
+    hyrje_nov,
+    hyrje_dec
+)
+attributes(month_based) = list(
+    names = c(
+        "Janar",
+        "Shkurt",
+        "Mars",
+        "Prill",
+        "Maj",
+        "Qershor",
+        "Korrik",
+        "Gusht",
+        "Shtator",
+        "Tetor",
+        "Nentor",
+        "Dhjetor"
+    ),
+    row.names=1:max(length(x), length(y)), 
+    class='data.frame'
+)
+
+boxplot(month_based, xlab = "Muaji", ylab = "Hyrje te shtetasve te huaj")
+```
+
 
 INTERPRETIM
 
 Shenim: Injoro 2016 dhe 2021 sepse ka shume pak te dhena
-
-
-
