@@ -1,7 +1,7 @@
-build_vector = function(dataframe, y, start_x, end_x) {
+build_vector = function(dataframe, y, sequence) {
     vec = c()
     
-    for (i in start_x:end_x) {
+    for (i in sequence) {
         vec = c(vec, dataframe[y, i])
     }
     return(vec)

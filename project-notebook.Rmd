@@ -67,6 +67,7 @@ INTERPRETIM
 
 
 ```{r}
+# read data
 hyrje = readXL(
     "/home/andri/projects/applied-statistics/datasets/tab-4.xlsx", 
     rownames=FALSE, 
@@ -76,19 +77,28 @@ hyrje = readXL(
     stringsAsFactors=TRUE
 )
 
+# build data frame for each year
+hyrje2016 = build_vector(hyrje, 1, seq(2, 3))
+hyrje2017 = build_vector(hyrje, 1, seq(4, 15))
+hyrje2018 = build_vector(hyrje, 1, seq(16, 27))
+hyrje2019 = build_vector(hyrje, 1, seq(28, 39))
+hyrje2020 = build_vector(hyrje, 1, seq(40, 51))
+hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
 
-hyrje2016 = build_vector(hyrje, 1, 2, 3)
-hyrje2017 = build_vector(hyrje, 1, 4, 15)
-hyrje2018 = build_vector(hyrje, 1, 16, 27)
-hyrje2019 = build_vector(hyrje, 1, 28, 39)
-hyrje2020 = build_vector(hyrje, 1, 40, 51)
-hyrje2021 = build_vector(hyrje, 1, 52, 53)
+year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
+attributes(year_based) = list(
+    names = c("2016", "2017", "2018", "2019", "2020", "2021"),
+    row.names=1:max(length(x), length(y)), 
+    class='data.frame'
+)
 
-h2016
-h2017
-h2018
-h2019
-h2020
-h2021
+# plot
+boxplot(year_based)
 ```
+
+INTERPRETIM
+
+Shenim: Injoro 2016 dhe 2021 sepse ka shume pak te dhena
+
+
 
