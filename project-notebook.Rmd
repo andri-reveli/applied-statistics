@@ -17,8 +17,11 @@ Librarite dhe paketat qe do te perdoren ne kete projekt:
 library(esquisse)
 library(ggplot2)
 library(reshape)
+library(readxl)
+library(Rcmdr)
 
 source("clean.R")
+source("utils.R")
 ```
 
 
@@ -61,3 +64,31 @@ ggplot(
 ```
 
 INTERPRETIM
+
+
+```{r}
+hyrje = readXL(
+    "/home/andri/projects/applied-statistics/datasets/tab-4.xlsx", 
+    rownames=FALSE, 
+    header=TRUE, 
+    na="", 
+    sheet="Sheet 1", 
+    stringsAsFactors=TRUE
+)
+
+
+hyrje2016 = build_vector(hyrje, 1, 2, 3)
+hyrje2017 = build_vector(hyrje, 1, 4, 15)
+hyrje2018 = build_vector(hyrje, 1, 16, 27)
+hyrje2019 = build_vector(hyrje, 1, 28, 39)
+hyrje2020 = build_vector(hyrje, 1, 40, 51)
+hyrje2021 = build_vector(hyrje, 1, 52, 53)
+
+h2016
+h2017
+h2018
+h2019
+h2020
+h2021
+```
+
