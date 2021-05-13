@@ -72,7 +72,7 @@ Te dhenat vjetore
 ```{r}
 # read data
 hyrje = readXL(
-    "/home/andri/projects/applied-statistics/datasets/tab-4.xlsx", 
+    "datasets/tab-4.xlsx", 
     rownames=FALSE, 
     header=TRUE, 
     na="", 
