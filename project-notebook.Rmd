@@ -93,7 +93,7 @@ hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
 year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
 attributes(year_based) = list(
     names = c("2016", "2017", "2018", "2019", "2020", "2021"),
-    row.names=1:max(length(x), length(y)), 
+    row.names=1:length(x), 
     class='data.frame'
 )
 
@@ -149,7 +149,7 @@ attributes(month_based) = list(
         "Nentor",
         "Dhjetor"
     ),
-    row.names=1:max(length(x), length(y)), 
+    row.names=1:length(x), 
     class='data.frame'
 )
 
