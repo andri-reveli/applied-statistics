@@ -25,6 +25,12 @@ source("scripts/utils.R")
 ```
 
 
+```{r}
+# Global constants
+months = c("Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor")
+
+
+```
 
 
 ```{r}
@@ -73,11 +79,11 @@ Te dhenat vjetore
 # read data
 hyrje = readXL(
     "datasets/tab-4.xlsx", 
-    rownames=FALSE, 
-    header=TRUE, 
-    na="", 
-    sheet="Sheet 1", 
-    stringsAsFactors=TRUE
+    rownames = FALSE, 
+    header = TRUE, 
+    na = "", 
+    sheet = "Sheet 1", 
+    stringsAsFactors = TRUE
 )
 
 print(hyrje)
@@ -93,12 +99,12 @@ hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
 year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
 attributes(year_based) = list(
     names = c("2016", "2017", "2018", "2019", "2020", "2021"),
-    row.names=1:length(x), 
-    class='data.frame'
+    row.names = 1:length(x), 
+    class = 'data.frame'
 )
 
 # plot
-boxplot(year_based, xlab = "Viti", ylab = "Hyrje te shtetasve te huaj")
+boxplot(year_based, xlab = "Viti", ylab = "Hyrje te shtetasve te huaj per qellime pushimi")
 ```
 
 
@@ -135,25 +141,12 @@ month_based = list(
     hyrje_dec
 )
 attributes(month_based) = list(
-    names = c(
-        "Janar",
-        "Shkurt",
-        "Mars",
-        "Prill",
-        "Maj",
-        "Qershor",
-        "Korrik",
-        "Gusht",
-        "Shtator",
-        "Tetor",
-        "Nentor",
-        "Dhjetor"
-    ),
-    row.names=1:length(x), 
-    class='data.frame'
+    names = months,
+    row.names = 1:length(x), 
+    class = 'data.frame'
 )
 
-boxplot(month_based, xlab = "Muaji", ylab = "Hyrje te shtetasve te huaj")
+boxplot(month_based, xlab = "Muaji", ylab = "Hyrje te shtetasve te huaj per qellime pushimi")
 ```
 
 
