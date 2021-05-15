@@ -87,6 +87,7 @@ hyrje = readXL(
 
 print(hyrje)
 
+
 # build data frame for each year
 hyrje2016 = build_vector(hyrje, 1, seq(2, 3))
 hyrje2017 = build_vector(hyrje, 1, seq(4, 15))
@@ -101,6 +102,7 @@ attributes(year_based) = list(
     row.names = 1:length(x), 
     class = 'data.frame'
 )
+
 
 # plot
 to_plot = data.frame(
@@ -159,7 +161,7 @@ month_based = list(
 )
 attributes(month_based) = list(
     names = months,
-    row.names = 1:length(x), 
+    row.names = 1:max(length(x), 12), 
     class = 'data.frame'
 )
 
