@@ -17,7 +17,6 @@ Librarite dhe paketat qe do te perdoren ne kete projekt:
 library(esquisse)
 library(ggplot2)
 library(reshape)
-library(readxl)
 library(Rcmdr)
 
 source("scripts/clean.R")
@@ -29,7 +28,7 @@ source("scripts/utils.R")
 # Global constants
 months = c("Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor")
 
-
+years2016_2021 = c(2016, 2017, 2018, 2019, 2020, 2021)
 ```
 
 
@@ -98,13 +97,31 @@ hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
 
 year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
 attributes(year_based) = list(
-    names = c("2016", "2017", "2018", "2019", "2020", "2021"),
+    names = years2016_2021,
     row.names = 1:length(x), 
     class = 'data.frame'
 )
 
 # plot
-boxplot(year_based, xlab = "Viti", ylab = "Hyrje te shtetasve te huaj per qellime pushimi")
+to_plot = data.frame(
+    vitet2016_2021 = years2016_2021,
+    viti_2016 = year_based$`2016`,
+    viti_2017 = year_based$`2017`,
+    viti_2018 = year_based$`2018`,
+    viti_2019 = year_based$`2019`,
+    viti_2020 = year_based$`2020`,
+    viti_2021 = year_based$`2021`
+)
+melted = melt(to_plot, id="vitet2016_2021")
+
+ggplot(melted, aes(x = vitet2016_2021, y = value, fill = variable)) + 
+    geom_boxplot(outlier.colour = "red", outlier.shape = 1) + 
+    labs(
+        title = "Hyrje te shtetasve te huaj per qellime pushimi, vizita etj",
+        x = "Viti",
+        y = "Hyrje" 
+    ) + 
+    guides(fill = FALSE)
 ```
 
 
@@ -146,6 +163,7 @@ attributes(month_based) = list(
     class = 'data.frame'
 )
 
+# plot
 boxplot(month_based, xlab = "Muaji", ylab = "Hyrje te shtetasve te huaj per qellime pushimi")
 ```
 
