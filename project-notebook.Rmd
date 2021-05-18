@@ -18,6 +18,7 @@ library(esquisse)
 library(ggplot2)
 library(reshape)
 library(Rcmdr)
+library(readxl)
 
 source("scripts/clean.R")
 source("scripts/utils.R")
@@ -36,14 +37,17 @@ years2016_2021 = c(2016, 2017, 2018, 2019, 2020, 2021)
 # test hi katror per pavaresine e hyrje daljeve nga viti
 
 # read the data
-x = read.csv2("datasets/tabela-e-hyrjeve.csv")
+hyrje_dalje_vjetore = read_excel(
+    path = "datasets/hyrje-dalje-vjetore.xlsx", 
+    col_types = c("numeric", "numeric", "numeric", "text")
+)
 
 ## convert to contigency table
 #y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
 #row.names(y) = x$Year
 #colnames(y) = c("Shqiptare", "Te huaj")
 #y = as.table(y)
-print(x)
+print(hyrje_dalje_vjetore)
 
 ## chi square test
 #chisq.test(y)
@@ -53,19 +57,21 @@ print(x)
 diagrami
 
 ```{r}
-to_plot = data.frame(
-    Viti = x$Year,
-    Shqiptare = x$Albania.citizens,
-    Te_huaj = x$Foreign.citizens
-)
-melted = melt(to_plot, id="Viti")
-
 ggplot(
-    melted, 
-    aes(x = Viti, y = value, fill = variable)
+    hyrje_dalje_vjetore, 
+    aes(x = Viti, y = `Hyrje (total)`, fill = Shtetas)
 ) + 
     geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
-    labs(y = "Hyrje", title = "Tabela e hyrjeve")
+    labs(y = "Hyrje", title = "Tabela e hyrjeve") + 
+    coord_cartesian(ylim = c(0, 6500000))
+
+ggplot(
+    hyrje_dalje_vjetore, 
+    aes(x = Viti, y = `Dalje (total)`, fill = Shtetas)
+) + 
+    geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
+    labs(y = "Dalje", title = "Tabela e daljeve") + 
+    coord_cartesian(ylim = c(0, 6500000))
 ```
 
 INTERPRETIM
