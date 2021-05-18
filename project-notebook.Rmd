@@ -105,7 +105,7 @@ hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
 year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
 attributes(year_based) = list(
     names = years2016_2021,
-    row.names = 1:length(x), 
+    row.names = 1:5, 
     class = 'data.frame'
 )
 
@@ -122,57 +122,31 @@ to_plot = data.frame(
 )
 melted = melt(to_plot, id="vitet2016_2021")
 
-ggplot(melted, aes(x = vitet2016_2021, y = value, fill = variable)) + 
+ggplot(melted, aes(x = vitet2016_2021, y = value, fill = variable, alpha = 0.8)) + 
     geom_boxplot(outlier.colour = "red", outlier.shape = 1) + 
     labs(
         title = "Hyrje te shtetasve te huaj per qellime pushimi, vizita etj",
         x = "Viti",
         y = "Hyrje" 
     ) + 
-    guides(fill = FALSE)
+    guides(fill = FALSE, alpha = FALSE)
 ```
 
 
 Te dhenat mujore
 
 ```{r}
-# build data frame for each month
-
-hyrje_jan = build_vector(hyrje, 1, seq(4, 53, 12))
-hyrje_feb = build_vector(hyrje, 1, seq(5, 53, 12))
-hyrje_mar = build_vector(hyrje, 1, seq(6, 53, 12))
-hyrje_apr = build_vector(hyrje, 1, seq(7, 53, 12))
-hyrje_may = build_vector(hyrje, 1, seq(8, 53, 12))
-hyrje_jun = build_vector(hyrje, 1, seq(9, 53, 12))
-hyrje_jul = build_vector(hyrje, 1, seq(10, 53, 12))
-hyrje_aug = build_vector(hyrje, 1, seq(11, 53, 12))
-hyrje_sep = build_vector(hyrje, 1, seq(12, 53, 12))
-hyrje_oct = build_vector(hyrje, 1, seq(13, 53, 12))
-hyrje_nov = build_vector(hyrje, 1, seq(2, 53, 12))
-hyrje_dec = build_vector(hyrje, 1, seq(3, 53, 12))
-
-month_based = list(
-    hyrje_jan,
-    hyrje_feb,
-    hyrje_mar,
-    hyrje_apr,
-    hyrje_may,
-    hyrje_jun,
-    hyrje_jul,
-    hyrje_aug,
-    hyrje_sep,
-    hyrje_oct,
-    hyrje_nov,
-    hyrje_dec
-)
-attributes(month_based) = list(
-    names = months,
-    row.names = 1:max(length(x), 12), 
-    class = 'data.frame'
-)
-
-# plot
-boxplot(month_based, xlab = "Muaji", ylab = "Hyrje te shtetasve te huaj per qellime pushimi")
+ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) + 
+    geom_boxplot(outlier.colour = "red", outlier.shape = 1, alpha = 0.5, color = "black") + 
+    labs(
+        title = "Hyrje te shtetasve te huaj per qellime pushimi, vizita etj",
+        x = "Muaji",
+        y = "Hyrje" 
+    ) + 
+    scale_x_discrete(
+        limit = factor(1:12), 
+        labels = months
+    )
 ```
 
 
