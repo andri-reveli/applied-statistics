@@ -14,10 +14,7 @@ date: 2021-06-01
 Librarite dhe paketat qe do te perdoren ne kete projekt:
 
 ```{r}
-library(esquisse)
 library(ggplot2)
-library(reshape)
-library(Rcmdr)
 library(readxl)
 
 source("scripts/clean.R")
@@ -81,55 +78,28 @@ INTERPRETIM
 Te dhenat vjetore
 
 ```{r}
-# read data
-hyrje = readXL(
-    "datasets/tab-4.xlsx", 
-    rownames = FALSE, 
-    header = TRUE, 
-    na = "", 
-    sheet = "Sheet 1", 
-    stringsAsFactors = TRUE
+
+hyrje_mujore_te_huaj = read_excel(
+    path = "datasets/hyrje-mujore-te-huaj.xlsx", 
+    col_types = c("numeric", "numeric", "numeric")
 )
 
-print(hyrje)
+print(hyrje_mujore_te_huaj)
 
-
-# build data frame for each year
-hyrje2016 = build_vector(hyrje, 1, seq(2, 3))
-hyrje2017 = build_vector(hyrje, 1, seq(4, 15))
-hyrje2018 = build_vector(hyrje, 1, seq(16, 27))
-hyrje2019 = build_vector(hyrje, 1, seq(28, 39))
-hyrje2020 = build_vector(hyrje, 1, seq(40, 51))
-hyrje2021 = build_vector(hyrje, 1, seq(52, 53))
-
-year_based = list(hyrje2016, hyrje2017, hyrje2018, hyrje2019, hyrje2020, hyrje2021)
-attributes(year_based) = list(
-    names = years2016_2021,
-    row.names = 1:5, 
-    class = 'data.frame'
-)
-
-
-# plot
-to_plot = data.frame(
-    vitet2016_2021 = years2016_2021,
-    viti_2016 = year_based$`2016`,
-    viti_2017 = year_based$`2017`,
-    viti_2018 = year_based$`2018`,
-    viti_2019 = year_based$`2019`,
-    viti_2020 = year_based$`2020`,
-    viti_2021 = year_based$`2021`
-)
-melted = melt(to_plot, id="vitet2016_2021")
-
-ggplot(melted, aes(x = vitet2016_2021, y = value, fill = variable, alpha = 0.8)) + 
-    geom_boxplot(outlier.colour = "red", outlier.shape = 1) + 
+ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) + 
+    geom_boxplot(
+        outlier.colour = "red", 
+        outlier.shape = 1, 
+        alpha = 0.5, 
+        color = "black",
+        fill = years2016_2021
+    ) + 
     labs(
         title = "Hyrje te shtetasve te huaj per qellime pushimi, vizita etj",
         x = "Viti",
         y = "Hyrje" 
-    ) + 
-    guides(fill = FALSE, alpha = FALSE)
+    )
+
 ```
 
 
