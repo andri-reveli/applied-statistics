@@ -134,3 +134,11 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
 INTERPRETIM
 
 
+## Ndikimi i hyrjeve te shtetasve te huaj ne kursin e kembimit valutor
+
+### Motivim
+
+/// TODO
+
+
+
