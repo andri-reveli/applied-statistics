@@ -22,6 +22,7 @@ source("scripts/utils.R")
 ```
 
 
+## Analiza e hyrje daljeve per periudhen 2014 - 2021
 ```{r}
 # Global constants
 months = c("Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor")
@@ -51,6 +52,8 @@ print(hyrje_dalje_vjetore)
 ```
 
 
+### Trendi i hyrje-daljeve ne Shqiperi per periudhen 2014-2021 sipas shtetesise
+
 diagrami
 
 ```{r}
@@ -75,7 +78,11 @@ INTERPRETIM
 
 
 
-Te dhenat vjetore
+### Analiza e hyrjeve te shtetasve te huaj ne Shqiperi
+
+#### Motivimi
+
+/// TODO
 
 ```{r}
 
@@ -102,6 +109,10 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) +
 
 ```
 
+Interpretim
+
+Shenim: Injoro 2016 dhe 2021 sepse ka shume pak te dhena
+
 
 Te dhenat mujore
 
@@ -122,4 +133,4 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
 
 INTERPRETIM
 
-Shenim: Injoro 2016 dhe 2021 sepse ka shume pak te dhena
+
