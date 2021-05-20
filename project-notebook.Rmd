@@ -169,6 +169,7 @@ Shihet nje renie gjate muajit te 5-te deri ne muajin e 10-te te vitit ne pergjit
 /// TODO
 
 ```{r}
+# mean of foreign tourists per each month of the year
 x = hyrje_mujore_te_huaj %>% 
     group_by(Muaji) %>% 
     summarise_at(
@@ -176,6 +177,7 @@ x = hyrje_mujore_te_huaj %>%
         list(name = mean)
     )
 
+# mean of exchange rate of each currency per each month of the year
 monedha = data.frame(months)
 for (curr in currencies) {
     el = kursi_i_kembimit_valutor_mujor %>% 
@@ -188,7 +190,7 @@ for (curr in currencies) {
     monedha[curr] = el$name
 }
 
-
+# combine
 df = data.frame(
     muaji = months,
     hyrje = x$name,
