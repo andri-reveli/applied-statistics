@@ -51,7 +51,7 @@ print(hyrje_dalje_vjetore)
 #chisq.test(y)
 ```
 
-Reference [tabela e hyrje-daljeve vjetore]
+Reference [tabela e hyrje-daljeve vjetore].
 
 ### Trendi i hyrje-daljeve ne Shqiperi per periudhen 2014-2021 sipas shtetesise
 
@@ -144,10 +144,14 @@ INTERPRETIM
 /// TODO
 
 
+Reference [kursi i kembimit valutor].
 
 ## Referencat
 [hyrje te shtetasve te huaj]: http://instat.gov.al/media/8157/tab-4.xlsx
 [tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx 
+[kursi i kembimit valutor]: https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html
 
-- [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
-- [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
+
+1. [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
+2. [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
+3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html](https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
