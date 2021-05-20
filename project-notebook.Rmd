@@ -51,6 +51,7 @@ print(hyrje_dalje_vjetore)
 #chisq.test(y)
 ```
 
+Reference [tabela e hyrje-daljeve vjetore]
 
 ### Trendi i hyrje-daljeve ne Shqiperi per periudhen 2014-2021 sipas shtetesise
 
@@ -109,6 +110,8 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) +
 
 ```
 
+Reference [hyrje te shtetasve te huaj].
+
 Interpretim
 
 Shenim: Injoro 2016 dhe 2021 sepse ka shume pak te dhena
@@ -142,3 +145,9 @@ INTERPRETIM
 
 
 
+## Referencat
+[hyrje te shtetasve te huaj]: http://instat.gov.al/media/8157/tab-4.xlsx
+[tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx 
+
+- [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
+- [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
