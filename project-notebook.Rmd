@@ -214,6 +214,10 @@ ggplot(df) +
   ) +
   theme_gray()
 
+cor.test(x = df$hyrje, y = df$gbp)
+```
+
+```{r}
 # chf
 ggplot(df) +
   aes(x = hyrje, y = chf) +
@@ -226,6 +230,10 @@ ggplot(df) +
   ) +
   theme_gray()
 
+cor.test(x = df$hyrje, y = df$chf)
+```
+
+```{r}
 # eur
 ggplot(df) +
   aes(x = hyrje, y = eur) +
@@ -238,6 +246,10 @@ ggplot(df) +
   ) +
   theme_gray()
 
+cor.test(x = df$hyrje, y = df$eur)
+```
+
+```{r}
 # usd
 ggplot(df) +
   aes(x = hyrje, y = usd) +
@@ -249,7 +261,11 @@ ggplot(df) +
     title = "Varesia e USD nga hyrjet mesatare mujore"
   ) +
   theme_gray()
+
+cor.test(x = df$hyrje, y = df$usd)
 ```
+
+
 
 Interpretim
 
