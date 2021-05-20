@@ -214,6 +214,7 @@ ggplot(df) +
   ) +
   theme_gray()
 
+
 cor.test(x = df$hyrje, y = df$gbp)
 ```
 
@@ -266,11 +267,11 @@ cor.test(x = df$hyrje, y = df$usd)
 ```
 
 
-
 Interpretim
 
 Shihet se per vlera < 600.000 hyrje te turisteve te huaj ne nje muaj kursi i kembimit per monedhat e medha bie pothuajse ne menyre lineare. Per vlera > 600.000 ndikimi eshte teper i vogel perjastuar USD.
 
+Shenim: ne testin e korrelacionit jane eleminuar vlerat per hyrje < 600.000 ne muaj
 
 
 
