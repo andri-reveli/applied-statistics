@@ -202,19 +202,19 @@ df = data.frame(
 
 # gbp
 ggplot(df) +
-  aes(x = hyrje, y = gbp) +
-  geom_point(
-    shape = "circle",
-    size = 2.5,
-    colour = "#112446"
-  ) +
-  geom_smooth(span = 1L) +
-  labs(
-    x = "Hyrje mesatare mujore te shtetasve te huaj",
-    y = "Vlera mesatare mujore e GBP",
-    title = "Varesia e kursit te kembimit te GBP ndaj hyrjeve mujore"
-  ) +
-  theme_gray()
+    aes(x = hyrje, y = gbp) +
+    geom_point(
+        shape = "circle",
+        size = 2.5,
+        colour = "#112446"
+    ) +
+    geom_smooth(span = 1L) +
+    labs(
+        x = "Hyrje mesatare mujore te shtetasve te huaj",
+        y = "Vlera mesatare mujore e GBP",
+        title = "Varesia e kursit te kembimit te GBP ndaj hyrjeve mujore"
+    ) +
+    theme_gray()
 
 
 cor.test(x = df$hyrje, y = df$gbp)
@@ -223,15 +223,15 @@ cor.test(x = df$hyrje, y = df$gbp)
 ```{r}
 # chf
 ggplot(df) +
-  aes(x = hyrje, y = chf) +
-  geom_point(shape = "circle", size = 2.5, colour = "#112446") +
-  geom_smooth(span = 1L) +
-  labs(
-    x = "Hyrje mesatare mujore",
-    y = "Vlera mesatare mujore CHF",
-    title = "Varesia e CHF nga hyrjet mujore"
-  ) +
-  theme_gray()
+    aes(x = hyrje, y = chf) +
+    geom_point(shape = "circle", size = 2.5, colour = "#112446") +
+    geom_smooth(span = 1L) +
+    labs(
+        x = "Hyrje mesatare mujore",
+        y = "Vlera mesatare mujore CHF",
+        title = "Varesia e CHF nga hyrjet mujore"
+    ) +
+    theme_gray()
 
 cor.test(x = df$hyrje, y = df$chf)
 ```
@@ -239,15 +239,15 @@ cor.test(x = df$hyrje, y = df$chf)
 ```{r}
 # eur
 ggplot(df) +
-  aes(x = hyrje, y = eur) +
-  geom_point(shape = "circle", size = 2.5, colour = "#112446") +
-  geom_smooth(span = 1L) +
-  labs(
-    x = "Hyrje mujore",
-    y = "Vlera e EUR",
-    title = "Varesia e EUR nga hyrjet mesatare mujore"
-  ) +
-  theme_gray()
+    aes(x = hyrje, y = eur) +
+    geom_point(shape = "circle", size = 2.5, colour = "#112446") +
+    geom_smooth(span = 1L) +
+    labs(
+        x = "Hyrje mujore",
+        y = "Vlera e EUR",
+        title = "Varesia e EUR nga hyrjet mesatare mujore"
+    ) +
+    theme_gray()
 
 cor.test(x = df$hyrje, y = df$eur)
 ```
@@ -255,15 +255,15 @@ cor.test(x = df$hyrje, y = df$eur)
 ```{r}
 # usd
 ggplot(df) +
-  aes(x = hyrje, y = usd) +
-  geom_point(shape = "circle", size = 2.5, colour = "#112446") +
-  geom_smooth(span = 1L) +
-  labs(
-    x = "Hyrje mujore",
-    y = "Vlera e USD",
-    title = "Varesia e USD nga hyrjet mesatare mujore"
-  ) +
-  theme_gray()
+    aes(x = hyrje, y = usd) +
+    geom_point(shape = "circle", size = 2.5, colour = "#112446") +
+    geom_smooth(span = 1L) +
+    labs(
+        x = "Hyrje mujore",
+        y = "Vlera e USD",
+        title = "Varesia e USD nga hyrjet mesatare mujore"
+    ) +
+    theme_gray()
 
 cor.test(x = df$hyrje, y = df$usd)
 ```
