@@ -18,8 +18,6 @@ library(ggplot2)
 library(readxl)
 library(dplyr)
 
-source("scripts/clean.R")
-source("scripts/utils.R")
 ```
 
 
@@ -31,27 +29,19 @@ months = c("Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gush
 years2016_2021 = c(2016, 2017, 2018, 2019, 2020, 2021)
 
 currencies = c("GBP", "USD", "EUR", "CHF")
+
 ```
 
 
 ```{r}
-# test hi katror per pavaresine e hyrje daljeve nga viti
-
 # read the data
 hyrje_dalje_vjetore = read_excel(
     path = "datasets/hyrje-dalje-vjetore.xlsx", 
     col_types = c("numeric", "numeric", "numeric", "text")
 )
 
-## convert to contigency table
-#y = as.matrix(data.frame(x$Albania.citizens, x$Foreign.citizens))
-#row.names(y) = x$Year
-#colnames(y) = c("Shqiptare", "Te huaj")
-#y = as.table(y)
 print(hyrje_dalje_vjetore)
 
-## chi square test
-#chisq.test(y)
 ```
 
 Reference [tabela e hyrje-daljeve vjetore].
@@ -76,6 +66,7 @@ ggplot(
     geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
     labs(y = "Dalje", title = "Tabela e daljeve") + 
     coord_cartesian(ylim = c(0, 6500000))
+
 ```
 
 INTERPRETIM
@@ -87,6 +78,22 @@ INTERPRETIM
 #### Motivimi
 
 /// TODO
+
+```{r}
+alb = hyrje_dalje_vjetore %>%
+    filter(Shtetas == "Shqiptare")
+
+foreign = hyrje_dalje_vjetore %>%
+    filter(Shtetas == "Te huaj")
+
+cv_hyrje_alb = 100 * sd(alb$`Hyrje (total)`) / mean(alb$`Hyrje (total)`)
+cv_hyjre_foreign = 100 * sd(foreign$`Hyrje (total)`) / mean(foreign$`Hyrje (total)`)
+
+print("Varesia ndaj hyrjeve te shqiptareve (%)\n")
+print(cv_hyrje_alb)
+print("Varesia ndaj hyrjeve te te huajve (%)\n")
+print(cv_hyjre_foreign)
+```
 
 ```{r}
 
@@ -134,6 +141,7 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
         limit = factor(1:12), 
         labels = months
     )
+
 ```
 
 
@@ -160,6 +168,7 @@ ggplot(kursi_i_kembimit_valutor_mujor, aes(x = Muaji, y = `Vlera (ALL)`, group =
         y = "Hyrje" 
     ) + 
     facet_wrap(vars(Monedha))
+
 ```
 
 Interpretim
@@ -218,6 +227,7 @@ ggplot(df) +
 
 
 cor.test(x = df$hyrje, y = df$gbp)
+
 ```
 
 ```{r}
@@ -234,6 +244,7 @@ ggplot(df) +
     theme_gray()
 
 cor.test(x = df$hyrje, y = df$chf)
+
 ```
 
 ```{r}
@@ -250,6 +261,7 @@ ggplot(df) +
     theme_gray()
 
 cor.test(x = df$hyrje, y = df$eur)
+
 ```
 
 ```{r}
@@ -266,6 +278,7 @@ ggplot(df) +
     theme_gray()
 
 cor.test(x = df$hyrje, y = df$usd)
+
 ```
 
 
