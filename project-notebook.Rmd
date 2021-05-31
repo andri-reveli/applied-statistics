@@ -20,8 +20,6 @@ library(dplyr)
 
 ```
 
-
-## Analiza e hyrje daljeve per periudhen 2014 - 2021
 ```{r}
 # Global constants
 months = c("Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nentor", "Dhjetor")
@@ -32,6 +30,20 @@ currencies = c("GBP", "USD", "EUR", "CHF")
 
 ```
 
+### Motivim
+
+Dihet tashme qe sektori i turizmit eshte nje nga sektoret me me peshe ne ekonomine e Shqiperise. Sipas [INSTAT], ne periudhen 2016 - 2019 rritja reale e prodhimit te brendshem bruto per sektorin e sherbimeve akomoduese dhe ushqimore ka qene 14% per cdo vit ose e thene ndryshe per nje periudhe 3 vjecare ka patur nje rritje me gati 48% PBB-se se ketij sektori.
+Kjo deshmon fare mire per rendesine e ketij sektori dhe studime te metejshme do te duhen ndermarre duke vleresuar kete ecuri teper pozitive.
+
+Ky projekt synon te studioje disa variabla te rendesishme sektorit te turizmit si: hyrje-daljet ne Republiken e Shqiperise vleresuar sipas shtetesise se vizitoreve dhe periudhes kur ata zgjedhin ta vizitojne per qellime turizmi dhe ndikimit qe kjo levizje mund te kete ne kursin e kembimit valutor, pare kjo per disa valuta kryesore.
+
+Nga ana tjeter, ky projekt nuk synon te jape nje pergjigje shteruese per variblat e marre ne shqyrtim, por as edhe te jape nje veshtrim siperfaqsor. Te gjthe nanlizat edhe grafiket do te shoqerohen me komentin perkates.
+
+## Analiza e hyrje daljeve per periudhen 2014 - 2021
+
+### Hyrje
+
+// TODO
 
 ```{r}
 # read the data
@@ -297,8 +309,10 @@ Reference [kursi i kembimit valutor].
 [hyrje te shtetasve te huaj]: http://instat.gov.al/media/8157/tab-4.xlsx
 [tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx 
 [kursi i kembimit valutor]: https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html
+[INSTAT]: instat.gov.al/media/8287/tab-3.xlsx
 
 
 1. [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
 2. [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
 3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html](https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
+4. [instat.gov.al/media/8287/tab-3.xlsx](instat.gov.al/media/8287/tab-3.xlsx)
