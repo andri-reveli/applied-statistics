@@ -1,5 +1,5 @@
 ---
-title: "Projekt"
+title: "Analize e ndikimit te turizmit ne ekonomine shqiptare"
 output: html_notebook
 author:
     - Anisa Kapri
@@ -134,7 +134,8 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) +
 Reference [hyrje te shtetasve te huaj].
 
 Ky grafik duket qartazi qe eshte ne mbeshtetje te grafikut te mesiperm, pra rritja e fluksit te hyrjeve te shtetasve te huaj ne Republiken e Shqiperise nuk ka qene thjeshte nje tranzit i perkohshem me qellim hyrjen ne ndonje shtet fqinj, por kjo rritje i detyrohet shtimit te turisteve me shtetesi te huaj. Gjithashtu vihet re se kemi shume pika "outlier" qe i korrespondojne muajve te veres dhe ne pergjithesi vezhgimet jane te menjanuara ne te djathte.
-Shenim: Vitiet 2016 dhe 2021 kane shume pak te dhena, vetem 2 muaj saktesisht.
+
+**Shenim**: Vitiet 2016 dhe 2021 kane shume pak te dhena, vetem 2 muaj saktesisht.
 
 
 Te dhenat mujore
@@ -156,7 +157,7 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
 
 Ketu vihet re akoma me mire ndikimi qe sezoni turistik veror ka ne te vertete. Hyrjet e shtetasve fillojne qe te rriten ne menyre te konsiderueshme ne muajin qershor dhe ne 2 muajt pasues kemi nje shtim thuajse eksponencial te turisteve te huaj. Ia vlene te theksojme se ekziston njefare simetrie nqs perjashtojme muajt korrik edhe gusht. Vihet re se qershori edhe shtatori kane nje fluks te ngjashem turizmi. I njejti shihet ne prill, maj, tetor, por edhe ne muaj me mot te ftohte nentor - mars. Kjo deshmon fare mire se turizmi ne Shqiperi eshte perqendruar vetem ne sezonin veror edhe muajt e fluksi nuk eshte ne nivele jo te krahasueshme. Mund te shtojme si rekomandim se ne pamje te pare ekziston nje potencial per zgjatjen me 2 muaj te sezonit turistik, me saktesisht ne qershor edhe shtator. Politkat e qeverise qendrore dhe te bashkive bregdetare mund te fokusohen per nxitje te turizmit ne muajt ne fjale, ketu nuk perjashtohen edhe operatoret turistik qe te nxisin turistet e huaj per te vizituar Shqiperine gjate ketyre muajve me paketa turistike.
 
-// shperndarje normale per kete grafik
+// TODO shperndarje normale per kete grafik
 
 ## Ndikimi i hyrjeve te shtetasve te huaj ne kursin e kembimit valutor
 
@@ -181,11 +182,7 @@ ggplot(kursi_i_kembimit_valutor_mujor, aes(x = Muaji, y = `Vlera (ALL)`, group =
 
 ```
 
-Interpretim
-
-Shihet nje renie gjate muajit te 5-te deri ne muajin e 10-te te vitit ne pergjithesi
-
-/// TODO
+Ne pamje te pare shihet nje renie gjate muajit te 5-te deri ne muajin e 10-te te vitit ne pergjithesi per te gjitha valutat. Ne pergjithesi GBP duket me e ndjeshme ndaj ketij ndryshimi.
 
 ```{r}
 # mean of foreign tourists per each month of the year
@@ -291,12 +288,22 @@ cor.test(x = df$hyrje, y = df$usd)
 
 ```
 
+Ne testet e mesiperme per secilen prej valutave eshte marre mesatrja mujore, bazuar ne te dhenat e marra ng Banka e Shqiperise dhe eshte krahasuar perkundrejt mesatares se hyrjve mujore te turisteve te huaj duke perdorur testin e korrelacionit te Pirsonit.
 
-Interpretim
+Nga te dhenat e marra shihet se per vlera < 600.000 hyrje te turisteve te huaj ne nje muaj kursi i kembimit per per valutat e marra ne shqyrtim bie pothuajse ne menyre lineare. Per vlera > 600.000 ndikimi eshte teper i vogel perjastuar USD. Besueshmeria e testit ne rend zbrites eshte: 
 
-Shihet se per vlera < 600.000 hyrje te turisteve te huaj ne nje muaj kursi i kembimit per monedhat e medha bie pothuajse ne menyre lineare. Per vlera > 600.000 ndikimi eshte teper i vogel perjastuar USD.
+| Monedha                 | Besueshmeria |
+|:------------------------|:-------------|
+| GBP (Paund britanik)    | 83,24%       |
+| EUR (Euro)              | 74,30%       |
+| CHF (Franga zviceriane) | 74,21%       |
+| USD (Dollar amerikan)   | 68,60%       |
 
-Shenim: ne testin e korrelacionit jane eleminuar vlerat per hyrje < 600.000 ne muaj
+E thene ndryshe vlera e kursit te kembimit te GBP-se eshte shume me e ndjeshmje ndaj sezonit krahasuar me valutat e tjera, kurse USD ka ndikohet me pak nga te gjthe monedhat e tjera, por gjithsesi mbetet ne nivele te krahasueshme me EUR dhe CHF. 
+
+Duke e pare nga nje kendveshtrim ekonomk, drejteza renese qe shohim per vlera < 600.000 turiste te huaj mesatarisht ne muaj eshte dicka e pritshme, sic e shprehem ne hyrjen e ketij seksioni. Ky rezultat mbeshtet hipotezen se shtimi i hyrjeve te turisteve te huaj ka sjelle shtimin e valutave te huaja ne tregun shqiptar, qe interpretohet si rritje e konsumit e shkaktuar prej sezonit turistik.
+
+**Shenim**: ne testin e korrelacionit jane eleminuar vlerat per hyrje < 600.000 ne muaj
 
 
 
