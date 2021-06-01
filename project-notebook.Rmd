@@ -113,7 +113,7 @@ hyrje_mujore_te_huaj = read_excel(
     col_types = c("numeric", "numeric", "numeric")
 )
 
-print(hyrje_mujore_të_huaj)
+print(hyrje_mujore_te_huaj)
 
 ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) + 
     geom_boxplot(
