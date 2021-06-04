@@ -33,23 +33,36 @@ currencies = c("GBP", "USD", "EUR", "CHF")
 
 ### Motivim
 
-Dihet tashmë që sektori i turizmit është një nga sektorët më me peshë në ekonominë e Shqipërisë. Sipas [INSTAT], në periudhën 2016 - 2019 rritja reale e prodhimit të brendshëm bruto për sektorin e shërbimeve akomoduese dhe ushqimore ka qenë 14% për cdo vit ose e thënë ndryshe për një periudhë 3 vjecare ka patur një rritje me gati 48% PBB-së së këtij sektori.
-Kjo dëshmon fare mirë për rëndësinë e këtij sektori dhe studime të mëtejshme do të duhen ndërmarre duke vlerësuar këtë ecuri tepër pozitive.
+Dihet tashmë që sektori i turizmit është një nga sektorët më me peshë në ekonominë e
+Shqipërisë. Sipas [INSTAT], në periudhën 2016 - 2019 rritja reale e prodhimit të brendshëm
+bruto për sektorin e shërbimeve akomoduese dhe ushqimore ka qenë 14% për cdo vit ose e
+thënë ndryshe për një periudhë 3 vjecare ka patur një rritje me gati 48% PBB-së së këtij
+sektori. Kjo dëshmon fare mirë për rëndësinë e këtij sektori dhe studime të mëtejshme do
+të duhen ndërmarre duke vlerësuar këtë ecuri tepër pozitive.
 
-Ky projekt synon të studiojë disa variabla të rëndesishmë sektorit të turizmit si: hyrje-daljet në Republikën e Shqipërisë vlerësuar sipas shtetësisë së vizitorëve dhe periudhës kur ata zgjedhin ta vizitojnë për qëllime turizmi dhe ndikimit që kjo lëvizje mund të ketë në kursin e këmbimit valutor, parë kjo për disa valuta kryesore.
+Ky projekt synon të studiojë disa variabla të rëndesishmë sektorit të turizmit si:
+hyrje-daljet në Republikën e Shqipërisë vlerësuar sipas shtetësisë së vizitorëve dhe
+periudhës kur ata zgjedhin ta vizitojnë për qëllime turizmi dhe ndikimit që kjo lëvizje
+mund të ketë në kursin e këmbimit valutor, parë kjo për disa valuta kryesore.
 
-Nga ana tjetër, ky projekt nuk synon të japë një përgjigje shteruese për variblat e marrë në shqyrtim, por as edhe të japë një vështrim sipërfaqësor. Të gjthë analizat edhe grafikët do të shoqërohen me komentin përkatës.
+Nga ana tjetër, ky projekt nuk synon të japë një përgjigje shteruese për variblat e marrë
+në shqyrtim, por as edhe të japë një vështrim sipërfaqësor. Të gjthë analizat edhe
+grafikët do të shoqërohen me komentin përkatës.
 
 ## Analiza e hyrje daljeve për periudhën 2014 - 2021
 
 ### Hyrje
 
-Periudha 2014 - 2012 ka qenë periudha kur Instituti i Statistikave ka rishqyrtuar fokusin që sektori i turizmit duhet të ketë në publikimet dhe studimet e tij, duke pasuruar databazat dhe duke na venë në dispozicion më shumë të dhëna për të marrë në studim. Kjo na ka lejuar për të dhënë një pasqyrë tepër të mirë për të vëzhguar nga një pikëpamje ekonomike edhe statistike ecurinë e këtij sektori. 
+Periudha 2014 - 2012 ka qenë periudha kur Instituti i Statistikave ka rishqyrtuar fokusin
+që sektori i turizmit duhet të ketë në publikimet dhe studimet e tij, duke pasuruar
+databazat dhe duke na venë në dispozicion më shumë të dhëna për të marrë në studim. Kjo
+na ka lejuar për të dhënë një pasqyrë tepër të mirë për të vëzhguar nga një pikëpamje
+ekonomike edhe statistike ecurinë e këtij sektori.
 
 ```{r}
 # read the data
 hyrje_dalje_vjetore = read_excel(
-    path = "datasets/hyrje-dalje-vjetore.xlsx", 
+    path = "datasets/hyrje-dalje-vjetore.xlsx",
     col_types = c("numeric", "numeric", "numeric", "text")
 )
 
@@ -65,19 +78,19 @@ diagrami
 
 ```{r}
 ggplot(
-    hyrje_dalje_vjetore, 
+    hyrje_dalje_vjetore,
     aes(x = Viti, y = `Hyrje (total)`, fill = Shtetas)
-) + 
-    geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
-    labs(y = "Hyrje", title = "Tabela e hyrjeve") + 
+) +
+    geom_bar(stat="identity",position = "dodge", alpha = 0.5) +
+    labs(y = "Hyrje", title = "Tabela e hyrjeve") +
     coord_cartesian(ylim = c(0, 6500000))
 
 ggplot(
-    hyrje_dalje_vjetore, 
+    hyrje_dalje_vjetore,
     aes(x = Viti, y = `Dalje (total)`, fill = Shtetas)
-) + 
-    geom_bar(stat="identity",position = "dodge", alpha = 0.5) + 
-    labs(y = "Dalje", title = "Tabela e daljeve") + 
+) +
+    geom_bar(stat="identity",position = "dodge", alpha = 0.5) +
+    labs(y = "Dalje", title = "Tabela e daljeve") +
     coord_cartesian(ylim = c(0, 6500000))
 
 ```
@@ -98,42 +111,66 @@ print("Varësia ndaj hyrjeve të të huajve (%)")
 print(cv_hyjre_foreign)
 ```
 
-Shikohet qartazi nga grafiku se hyrjet në Republikën e Shqipërise kanë qenë në një trend tepër të kënaqshëm rritës për periudhën 2014 - 2019. Rritja ka qenë thuajse konstante si nga shtetasit e huaj po ashtu edhe ata shqiptare. Gjithashtu vihet re se Shqipëria gëzon nje bilanc // TODO pozitiv në përgjithësi me më shumë hyrje se sa dalje, kjo dëshmon se ekziston një potencial për zhvillimin e mëtejshëm të sektorit. Gjithashtu është interesant trendi se pas vitit 2015 janë të huajt ata që e vizitojnë më shumë Shqipërinë, në krahasim me individëd me shtetësi shqiptare. Ky trend është i vërtetë deri në vitin 2019. Në vitin 2020, sic dihet, bota edhe Shqipëria u goditën nga pandemia e shkaktuar nga virusi COVID-19 dhe kjo solli pengim të udhëtimeve në shumë vende, gjë që sic duket ka goditur rëndë hyrjet e shtetasve të huaj, por nga ana tjetër është edhe me interesant fakti se hyrjet e shtetasve shqipare janë rritur krahasuar me një vit më parë. Kjo dëshmon për një besnikëri për sa i përketë rikthimit të shtetasve shqiptarë në origjinë, gjë që sduhet lënë pa u shfrytëzuar, sepse sic dëshmohet ata janë një grup i sigurt dhe mund të jenë një faktor që sjell hyrje të qëndrueshme në ekonominë përmes sektorit të turizmit.
+Shikohet qartazi nga grafiku se hyrjet në Republikën e Shqipërise kanë qenë në një trend
+tepër të kënaqshëm rritës për periudhën 2014 - 2019. Rritja ka qenë thuajse konstante si
+nga shtetasit e huaj po ashtu edhe ata shqiptare. Gjithashtu vihet re se Shqipëria gëzon
+nje bilanc me më shumë hyrje se sa dalje, kjo dëshmon se ekziston një potencial për
+zhvillimin e mëtejshëm të sektorit. Gjithashtu është interesant trendi se pas vitit 2015
+janë të huajt ata që e vizitojnë më shumë Shqipërinë, në krahasim me individëd me
+shtetësi shqiptare. Ky trend është i vërtetë deri në vitin 2019. Në vitin 2020, sic
+dihet, bota edhe Shqipëria u goditën nga pandemia e shkaktuar nga virusi COVID-19 dhe
+kjo solli pengim të udhëtimeve në shumë vende, gjë që sic duket ka goditur rëndë hyrjet
+e shtetasve të huaj, por nga ana tjetër është edhe me interesant fakti se hyrjet e
+shtetasve shqipare janë rritur krahasuar me një vit më parë. Kjo dëshmon për një
+besnikëri për sa i përketë rikthimit të shtetasve shqiptarë në origjinë, gjë që sduhet
+lënë pa u shfrytëzuar, sepse sic dëshmohet ata janë një grup i sigurt dhe mund të jenë
+një faktor që sjell hyrje të qëndrueshme në ekonominë përmes sektorit të
+turizmit.
 
 
 #### Analiza e hyrjeve te shtetasve te huaj ne Shqipvri
 
-Megjithëse sic e përcaktuam më lartë se diaspora shqiptare është një kategori e sigurt që do ta vizitojë Shqipërinë, nuk duhen neglizhuar turistët e huaj. Vërtetë, diaspora shqiptare sa vjen edhe rritet, por numri i saj është relativisht i vogël kur e krahasojmë me potencialin për të sjellë turistë nga vende me popullsi të lartë dhe me pak akses në sezonin turistik veror si vendet e Europës nordike, qëndrore dhe lindore. Gjithashtu ia vlenë të kemi edhe një pamje më të mirë mbi c'muaj te vitit tentojmë të kemi fluks hyrjesh nga turistët e huaj.
+Megjithëse sic e përcaktuam më lartë se diaspora shqiptare është një kategori e sigurt që
+do ta vizitojë Shqipërinë, nuk duhen neglizhuar turistët e huaj. Vërtetë, diaspora
+shqiptare sa vjen edhe rritet, por numri i saj është relativisht i vogël kur e krahasojmë
+me potencialin për të sjellë turistë nga vende me popullsi të lartë dhe me pak akses në
+sezonin turistik veror si vendet e Europës nordike, qëndrore dhe lindore. Gjithashtu ia
+vlenë të kemi edhe një pamje më të mirë mbi c'muaj te vitit tentojmë të kemi fluks hyrjesh
+nga turistët e huaj.
 
 
 ```{r}
-
 hyrje_mujore_te_huaj = read_excel(
-    path = "datasets/hyrje-mujore-te-huaj.xlsx", 
+    path = "datasets/hyrje-mujore-te-huaj.xlsx",
     col_types = c("numeric", "numeric", "numeric")
 )
 
 print(hyrje_mujore_te_huaj)
 
-ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) + 
+ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) +
     geom_boxplot(
-        outlier.colour = "red", 
-        outlier.shape = 1, 
-        alpha = 0.5, 
+        outlier.colour = "red",
+        outlier.shape = 1,
+        alpha = 0.5,
         color = "black",
         fill = years2016_2021
-    ) + 
+    ) +
     labs(
         title = "Hyrje të shtetasve të huaj për qëllime pushimi, vizita etj",
         x = "Viti",
-        y = "Hyrje" 
+        y = "Hyrje"
     )
 
 ```
 
 Referencë [hyrje të shtetasve të huaj].
 
-Ky grafik duket qartazi që është në mbështetje të grafikut të mësipërm, pra rritja e fluksit të hyrjeve të shtetasve të huaj në Republikën e Shqipërisë nuk ka qenë thjeshtë një tranzit i përkohshëm me qëllim hyrjen në ndonjë shtet fqinj, por kjo rritje i detyrohet shtimit të turistëve me shtetësi të huaj. Gjithashtu vihet re se kemi shumë pika “outlier” që i korrespondojnë muajve të verës dhe në përgjithësi vëzhgimet janë të mënjanuara në të djathtë.
+Ky grafik duket qartazi që është në mbështetje të grafikut të mësipërm, pra rritja e
+fluksit të hyrjeve të shtetasve të huaj në Republikën e Shqipërisë nuk ka qenë
+thjeshtë një tranzit i përkohshëm me qëllim hyrjen në ndonjë shtet fqinj, por kjo
+rritje i detyrohet shtimit të turistëve me shtetësi të huaj. Gjithashtu vihet re se
+kemi shumë pika “outlier” që i korrespondojnë muajve të verës dhe në përgjithësi
+vëzhgimet janë të mënjanuara në të djathtë.
 
 **Shenim**: Vitiet 2016 dhe 2021 kanë shumë pak të dhëna, vetëm 2 muaj saktësisht.
 
@@ -141,65 +178,85 @@ Ky grafik duket qartazi që është në mbështetje të grafikut të mësipërm,
 Të dhënat mujore
 
 ```{r}
-ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) + 
-    geom_boxplot(outlier.colour = "red", outlier.shape = 1, alpha = 0.5, color = "black") + 
+ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
+    geom_boxplot(outlier.colour = "red", outlier.shape = 1, alpha = 0.5, color = "black") +
     labs(
         title = "Hyrje te shtetasve te huaj per qellime pushimi, vizita etj",
         x = "Muaji",
-        y = "Hyrje" 
-    ) + 
+        y = "Hyrje"
+    ) +
     scale_x_discrete(
-        limit = factor(1:12), 
+        limit = factor(1:12),
         labels = months
     )
 
 ```
 
-Këtu vihet re akoma më mirë ndikimi që sezoni turistik veror ka në të vërtetë. Hyrjet e shtetasve fillojnë që të rriten në mënyrë të konsiderueshme në muajin qershor dhe në 2 muajt pasues kemi një shtim thuajse eksponencial të turistëve të huaj. Ia vlenë të theksojmë se ekziston njëfare simetrie nqs përjashtojmë muajt korrik edhe gusht. Vihet re se qershori edhe shtatori kanë një fluks të ngjashëm turizmi. I njëjti shihet në prill, maj, tetor, por edhe në muaj me mot të ftohtë nëntor - mars. Kjo dëshmon fare mirë se turizmi në Shqipëri është përqëndruar vetëm në sezonin veror edhe muajt e fluksi nuk është në nivele jo të krahasueshme. Mund të shtojmë si rekomandim se në pamje të parë ekziston një potencial për zgjatjen me 2 muaj të sezonit turistik, më saktësisht në qershor edhe shtator. Politikat e qeverisë qëndrore dhe të bashkive bregdetare mund të fokusohen për nxitje të turizmit në muajt në fjalë, këtu nuk përjashtohen edhe operatorët turistik që të nxisin turistët e huaj për të vizituar Shqipërinë gjatë këtyre muajve me paketa turistike.
-
-// TODO shpërndarje normale për këtë grafik
+Këtu vihet re akoma më mirë ndikimi që sezoni turistik veror ka në të vërtetë. Hyrjet e
+shtetasve fillojnë që të rriten në mënyrë të konsiderueshme në muajin qershor dhe në 2
+muajt pasues kemi një shtim thuajse eksponencial të turistëve të huaj. Ia vlen të
+theksojmë se ekziston njëfare simetrie nqs përjashtojmë muajt korrik edhe gusht. Vihet re
+se qershori edhe shtatori kanë një fluks të ngjashëm turizmi. I njëjti shihet në prill,
+maj, tetor, por edhe në muaj me mot të ftohtë nëntor - mars. Kjo dëshmon fare mirë se
+turizmi në Shqipëri është përqëndruar vetëm në sezonin veror edhe muajt e fluksi nuk është
+në nivele jo të krahasueshme. Mund të shtojmë si rekomandim se në pamje të parë ekziston
+një potencial për zgjatjen me 2 muaj të sezonit turistik, më saktësisht në qershor edhe
+shtator. Politikat e qeverisë qëndrore dhe të bashkive bregdetare mund të fokusohen për
+nxitje të turizmit në muajt në fjalë, këtu nuk përjashtohen edhe operatorët turistik që të
+nxisin turistët e huaj për të vizituar Shqipërinë gjatë këtyre muajve me paketa turistike.
 
 ## Ndikimi i hyrjeve të shtetasve të huaj në kursin e këmbimit valutor
 
 ### Motivim
 
-Nga analiza e mësiperme u pa se ekziston një trend rritës i turistëve të huaj, po ashtu se hyrjet e tyre nuk janë të shpërndara në mënyrë të njëtrajtshme gjatë gjithë vitit, por ekziston një sezonalitet. Kjo na nxit interesin të shikojmë në qoftë se ka edhe rritje të shpenzimeve të këtyre turistëve. Fatkeqësisht nuk ekziston ndonjë databazë që të na japë një përgjigje “të lehtë” për sa i përketë të dhënave të shpenzimeve individuale për secilin turist, por kjo s’na pengon ta analizojmë bazuar në disa faktore fakktorë shoqërues. Nga parimet bazë të ekonomisë dimë se rritja e sasisë së nje valute ne treg sjell rëniën e vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta kryesore si paundi britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga zviceriane (CHF).
+Nga analiza e mësiperme u pa se ekziston një trend rritës i turistëve të huaj, po ashtu se
+hyrjet e tyre nuk janë të shpërndara në mënyrë të njëtrajtshme gjatë gjithë vitit, por
+ekziston një sezonalitet. Kjo na nxit interesin të shikojmë në qoftë se ka edhe rritje të
+shpenzimeve të këtyre turistëve. Fatkeqësisht nuk ekziston ndonjë databazë që të na japë
+një përgjigje “të lehtë” për sa i përketë të dhënave të shpenzimeve individuale për
+secilin turist, por kjo s’na pengon ta analizojmë bazuar në disa faktore faktorë shoqërues.
+Nga parimet bazë të ekonomisë dimë se rritja e sasisë së nje valute ne treg sjell rëniën e
+vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta kryesore si paundi
+britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga zviceriane (CHF).
+
 ```{r}
 kursi_i_kembimit_valutor_mujor = read_excel(
-    path = "datasets/kursi-i-kembimit-valutor-mujor.xlsx", 
+    path = "datasets/kursi-i-kembimit-valutor-mujor.xlsx",
     col_types = c("text", "numeric", "numeric", "numeric")
 )
 print(kursi_i_kembimit_valutor_mujor)
-ggplot(kursi_i_kembimit_valutor_mujor, aes(x = Muaji, y = `Vlera (ALL)`, group = Muaji)) + 
-    geom_boxplot(outlier.colour = "red", outlier.shape = 1, alpha = 0.5, color = "black") + 
+ggplot(kursi_i_kembimit_valutor_mujor, aes(x = Muaji, y = `Vlera (ALL)`, group = Muaji)) +
+    geom_boxplot(outlier.colour = "red", outlier.shape = 1, alpha = 0.5, color = "black") +
     labs(
         title = "Hyrje të shtetasve të huaj për qëllime pushimi, vizita etj",
         x = "Muaji",
-        y = "Hyrje" 
-    ) + 
+        y = "Hyrje"
+    ) +
     facet_wrap(vars(Monedha))
 
 ```
 
-Në pamje të parë shihet një rënie gjatë muajit të 5-të deri në muajin e 10-të të vitit në përgjithësi për të gjitha valutat. Në përgjithësi GBP duket më e ndjeshme ndaj këtij ndryshimi.
+Në pamje të parë shihet një rënie gjatë muajit të 5-të deri në muajin e 10-të të vitit në
+përgjithësi për të gjitha valutat. Në përgjithësi GBP duket më e ndjeshme ndaj këtij
+ndryshimi.
 
 ```{r}
 # mean of foreign tourists per each month of the year
-x = hyrje_mujore_te_huaj %>% 
-    group_by(Muaji) %>% 
+x = hyrje_mujore_te_huaj %>%
+    group_by(Muaji) %>%
     summarise_at(
-        vars(Vlera), 
+        vars(Vlera),
         list(name = mean)
     )
 
 # mean of exchange rate of each currency per each month of the year
 monedha = data.frame(months)
 for (curr in currencies) {
-    el = kursi_i_kembimit_valutor_mujor %>% 
+    el = kursi_i_kembimit_valutor_mujor %>%
     filter(Monedha == curr) %>%
-    group_by(Muaji) %>% 
+    group_by(Muaji) %>%
     summarise_at(
-        vars(`Vlera (ALL)`), 
+        vars(`Vlera (ALL)`),
         list(name = mean)
     )
     monedha[curr] = el$name
@@ -287,9 +344,14 @@ cor.test(x = df$hyrje, y = df$usd)
 
 ```
 
-Në testet e mësiperme për secilën prej valutave është marrë mesatarja mujore, bazuar në të dhënat e marra nga Banka e Shqipërisë dhe është krahasuar përkundrejt mesatares së hyrjeve mujore të turistëve të huaj duke përdorur testin e korrelacionit të Pirsonit
+Në testet e mësiperme për secilën prej valutave është marrë mesatarja mujore, bazuar në të
+dhënat e marra nga Banka e Shqipërisë dhe është krahasuar përkundrejt mesatares së hyrjeve
+mujore të turistëve të huaj duke përdorur testin e korrelacionit të Pirsonit
 
-Nga të dhënat e marra shihet se për vlera &lt; 600.000 hyrje të turistëve të huaj në një muaj kursi i këmbimit për valutat e marra në shqyrtim bie pothuajse në mënyrë lineare. Për vlera &gt; 600.000 ndikimi është tepër i vogël perjashtuar USD. Besueshmëria e testit në rend zbritës është:
+Nga të dhënat e marra shihet se për vlera &lt; 600.000 hyrje të turistëve të huaj në një
+muaj kursi i këmbimit për valutat e marra në shqyrtim bie pothuajse në mënyrë lineare. Për
+vlera > 600.000 ndikimi është tepër i vogël perjashtuar USD. Besueshmëria e testit në rend
+zbritës është:
 
 | Monedha                 | Besueshmëria |
 |:------------------------|:-------------|
@@ -298,9 +360,15 @@ Nga të dhënat e marra shihet se për vlera &lt; 600.000 hyrje të turistëve t
 | CHF (Franga zviceriane) | 74,21%       |
 | USD (Dollar amerikan)   | 68,60%       |
 
-E thënë ndryshe vlera e kursit të këmbimit të GBP-së është shumë më e ndjeshme ndaj sezonit krahasuar me valutat e tjera, kurse USD-ja ndikohet më pak nga të gjthë monedhat e tjera, por gjithsesi mbetet në nivele të krahasueshme me EUR dhe CHF.
+E thënë ndryshe vlera e kursit të këmbimit të GBP-së është shumë më e ndjeshme ndaj
+sezonit krahasuar me valutat e tjera, kurse USD-ja ndikohet më pak nga të gjthë monedhat e
+tjera, por gjithsesi mbetet në nivele të krahasueshme me EUR dhe CHF.
 
-Duke e parë nga një këndvështrim ekonomik, drejtëza rënëse që shohim për vlera &lt; 600.000 turistë të huaj mesatarisht në muaj është dicka e pritshme, sic e shprehëm në hyrjen e këtij seksioni. Ky rezultat mbështet hipotezën se shtimi i hyrjeve të turistëve të huaj ka sjellë shtimin e valutave të huaja në tregun shqiptar, që interpretohet si rritje e konsumit e shkaktuar prej sezonit turistik.
+Duke e parë nga një këndvështrim ekonomik, drejtëza rënëse që shohim për vlera < 600.000
+turistë të huaj mesatarisht në muaj është dicka e pritshme, sic e shprehëm në hyrjen e
+këtij seksioni. Ky rezultat mbështet hipotezën se shtimi i hyrjeve të turistëve të huaj ka
+sjellë shtimin e valutave të huaja në tregun shqiptar, që interpretohet si rritje e
+konsumit e shkaktuar prej sezonit turistik.
 
 **Shënim**: në testin e korrelacionit janë eleminuar vlerat për hyrje < 600.000 në muaj.
 
@@ -311,12 +379,13 @@ Referencë [kursi i këmbimit valutor].
 
 ## Referencat
 [hyrje te shtetasve te huaj]: http://instat.gov.al/media/8157/tab-4.xlsx
-[tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx 
+[tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx
 [kursi i kembimit valutor]: https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html
 [INSTAT]: instat.gov.al/media/8287/tab-3.xlsx
 
 
 1. [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
 2. [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
-3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html](https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
+3.[https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html]
+(https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
 4. [instat.gov.al/media/8287/tab-3.xlsx](instat.gov.al/media/8287/tab-3.xlsx)
