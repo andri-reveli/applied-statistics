@@ -2,7 +2,7 @@
 Applied statistics project repository
 
 ## Struktura e projektit
-
+```
 ├── datasets											# datasetet qe u perdoren
 │   ├── hyrje-dalje-vjetore.xlsx
 │   ├── hyrje-mujore-te-huaj.xlsx
@@ -17,4 +17,5 @@ Applied statistics project repository
 ├── project-notebook.pdf								# outputi ne forme pdf
 ├── project-notebook.Rmd								# Rnotebook
 └── README.md											# README
+```
 
