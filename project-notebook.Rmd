@@ -2,9 +2,9 @@
 title: "Analizë e ndikimit të turizmit në ekonominë shqiptare"
 output: html_notebook
 author:
-    - Anisa Kapri
-    - Andri Reveli
-    - Dionis Hysko
+  - Anisa Kapri
+  - Andri Reveli
+  - Dionis Hysko
 date: 2021-06-16
 lang: sq-AL
 ---
