@@ -20,6 +20,7 @@ Libraritë dhe paketat që do të përdoren në këtë projekt:
 library(ggplot2)
 library(readxl)
 library(dplyr)
+library(R.utils)
 
 ```
 
@@ -108,10 +109,9 @@ foreign = hyrje_dalje_vjetore %>%
 cv_hyrje_alb = 100 * sd(alb$`Hyrje (total)`) / mean(alb$`Hyrje (total)`)
 cv_hyjre_foreign = 100 * sd(foreign$`Hyrje (total)`) / mean(foreign$`Hyrje (total)`)
 
-print("Varësia ndaj hyrjeve të shqiptarëve (%)")
-print(cv_hyrje_alb)
-print("Varësia ndaj hyrjeve të të huajve (%)")
-print(cv_hyjre_foreign)
+printf("Varësia ndaj hyrjeve të shqiptarëve \t%g%%\n", cv_hyrje_alb)
+printf("Varësia ndaj hyrjeve të të huajve \t%g%%\n", cv_hyjre_foreign)
+
 ```
 
 Shikohet qartazi nga grafiku se hyrjet në Republikën e Shqipërise kanë qenë në një trend
@@ -166,7 +166,7 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Viti, y = Vlera, group = Viti)) +
 
 ```
 
-Referencë [hyrje të shtetasve të huaj].
+Referencë [hyrje te shtetasve te huaj].
 
 Ky grafik duket qartazi që është në mbështetje të grafikut të mësipërm, pra rritja e
 fluksit të hyrjeve të shtetasve të huaj në Republikën e Shqipërisë nuk ka qenë
@@ -217,10 +217,13 @@ hyrjet e tyre nuk janë të shpërndara në mënyrë të njëtrajtshme gjatë gj
 ekziston një sezonalitet. Kjo na nxit interesin të shikojmë në qoftë se ka edhe rritje të
 shpenzimeve të këtyre turistëve. Fatkeqësisht nuk ekziston ndonjë databazë që të na japë
 një përgjigje “të lehtë” për sa i përketë të dhënave të shpenzimeve individuale për
-secilin turist, por kjo s’na pengon ta analizojmë bazuar në disa faktore faktorë shoqërues.
-Nga parimet bazë të ekonomisë dimë se rritja e sasisë së nje valute ne treg sjell rëniën e
-vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta kryesore si paundi
-britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga zviceriane (CHF).
+secilin turist, por kjo s’na pengon ta analizojmë bazuar në disa faktore faktorë
+shoqërues. Nga parimet bazë të ekonomisë dimë se rritja e sasisë së nje valute ne treg
+sjell rëniën e vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta
+kryesore si paundi britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga
+zviceriane (CHF).
+
+### Analiza
 
 ```{r}
 kursi_i_kembimit_valutor_mujor = read_excel(
@@ -347,6 +350,8 @@ cor.test(x = df$hyrje, y = df$usd)
 
 ```
 
+### Perfundime
+
 Në testet e mësiperme për secilën prej valutave është marrë mesatarja mujore, bazuar në të
 dhënat e marra nga Banka e Shqipërisë dhe është krahasuar përkundrejt mesatares së hyrjeve
 mujore të turistëve të huaj duke përdorur testin e korrelacionit të Pirsonit
@@ -375,20 +380,97 @@ konsumit e shkaktuar prej sezonit turistik.
 
 **Shënim**: në testin e korrelacionit janë eleminuar vlerat për hyrje < 600.000 në muaj.
 
+Referencë [kursi i kembimit valutor].
+
+## Vleresimi i neteve te qendrimit sipas tremujorve
+
+### Motivim
+
+// TODO
+Na i intereson te ndertojme nje interval besimi per netet e qendrimit qe nje turist
+shqiptar apo i huaj qendron ne nje hotel.
+
+```{r}
+nete_qendrimi <- read_excel("~/projects/applied-statistics/datasets/nete-qendrimi.xlsx", 
+    col_types = c("text", "numeric", "numeric", 
+        "numeric"))
+
+print(nete_qendrimi)
+
+interval = function(vec) {
+    students = 0
+    n = length(vec)
+    
+    if (n == 3) {
+        students = 4.303
+    }
+    else if (n == 4) {
+        students = 3.182
+    }
+    
+    m = mean(vec)
+    s = sd(vec)
+    
+    v1 = m - students * s / n
+    v2 = m + students * s / n
+    return(c(v1, v2))
+}
+
+for (i in 1:4) {
+    tremujori_i = nete_qendrimi %>%
+        filter(tremujori == i)
+    
+    rezident = tremujori_i %>%
+        filter(statusi == "rezident")
+    
+    jorezident = tremujori_i %>%
+        filter(statusi == "jorezident")
+    
+    ir = interval(rezident$numri)
+    ij = interval(jorezident$numri)
+    
+    printf("%g)\trezident:\t[%-7.0f - %7.0f]\n", i, ir[1], ir[2])
+    printf("\tjorezident:\t[%-7.0f - %7.0f]\n", ij[1], ij[2])
+}
+```
+
+### Perfundime
+
+**Shenim**: intervali i besimit per jorezidentet ne tremujorin e dyte merr vlere negative
+prej te dhenave te tremujorit te dyte 2020. Sic dihet kufizimet e pandemise kufizuan hrjet
+ne Shqiperi dhe kjo shkakton qe testi statistikor per kete vezhgim te marri vlere te
+palejuar. Gjithashtu ne vitin 2020, sic u pa edhe ne grafikun nr 1, pati shume here me pak
+turiste te huaj gje qe shkakton luhatje te medha per kategorine jorezident.
+
+Per rrjedhoje vetem kategoria e pushuesve rezident ia vlen te analizohet prej sasise se
+pakte te dhenave dhe ndikimit teper te madh te pandemise mbi pushuesit e huaj. Duke marre
+nje nivel besimi 95% vihet re se pushuesit rezidente ne Shqiperi shpenzojne midis 100.000
+deri ne 200.000 nete ne hotelet e vendit ne periudhen jashte sezonit veror, kurse gjate
+ketij te fundit midis 400.000 dhe 500.000 nete. Sikur te merrnim nje cmim arbitrar
+minimal 10\$ per nete qendrimi mund te presim nje konsum prej 4 milione deri ne 5
+milione \$ vetem si pasoje e turizmit te brendshem. Ky perfundim na lejon te besojme ne
+potencialin e sektorit te turizmit ne qofte se do te kishim nje orientim me te forte per
+nxitjen e metejshme te ketij sektori.
+
+Reference [nete qendrimi]
 
 
+## Perfundime dhe rekomandime
 
-Referencë [kursi i këmbimit valutor].
+// TODO
+
 
 ## Referencat
 [hyrje te shtetasve te huaj]: http://instat.gov.al/media/8157/tab-4.xlsx
 [tabela e hyrje-daljeve vjetore]: http://instat.gov.al/media/7951/tab-2.xlsx
 [kursi i kembimit valutor]: https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html
 [INSTAT]: instat.gov.al/media/8287/tab-3.xlsx
+[nete qendrimi]: instat.gov.al/media/8381/t1_2021-tab_2_net%C3%AB-q%C3%ABndrime.xlsx
 
 
 1. [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
 2. [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
-3.[https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html]
+3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html]
 (https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
 4. [instat.gov.al/media/8287/tab-3.xlsx](instat.gov.al/media/8287/tab-3.xlsx)
+5. [instat.gov.al/media/8381/t1_2021-tab_2_net%C3%AB-q%C3%ABndrime.xlsx](instat.gov.al/media/8381/t1_2021-tab_2_net%C3%AB-q%C3%ABndrime.xlsx)
