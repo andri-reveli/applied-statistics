@@ -387,10 +387,10 @@ Referencë [kursi i kembimit valutor].
 ### Motivim
 
 Një ndër elementët që na intereson të ndërtojmë, është një interval besimi për netët e
-qëndrimit që një turist shqiptar apo i huaj qëndron në një hotel, pasi ka një ndikim të 
-drejëpërdrejtë në ekonomi. Por gjithashtu për të dalluar se kur ky numër pëson rritje/ulje
-në bazë të lëvizjeve që rezidentët dhe jorezidentët kryejnë. Më poshtë janë vendosur të
-dhënat që këta individë kanë realizuar çdo tremujor nga viti 2018 deri në trejmuojrin e
+qëndrimit që një turist shqiptar apo i huaj qëndron në një hotel, pasi kjo mund të
+shërbejë si një metodë për të ditur se sa netë nj!turist mund të shpenzojë
+mesatarisht në Shqiperi. Më poshtë janë vendosur të dhënat se sa netë pushuesit kanë
+shpenzuar në hotelet shqiptare çdo tremujor nga viti 2018 deri në trejmuojrin e
 parë të 2021.
 
 ```{r}
@@ -476,6 +476,12 @@ e vlerës së saj. Gjithashtu shtimi i hyrjeve të turistëve të huaj ka sjell�
 valutave të huaja në tregun shqiptar, që interpretohet si rritje e konsumit e shkaktuar
 prej sezonit turistik. 
 
+Duhet theksuar se një zbulim tepër interesant i këtij projekti është besnikëria që
+pushuesit me shtetesi shqiptare kanë për te pushuar në Shqipëri. Ky projekt në te
+dhënat që ka shfrytëzuar ka përfshirë në një pjesë t! konsiderueshme të dhëna
+nga viti 2020 - 2021. Megjithëse në këtë periudhë Shqipëria ka patur kufizime në
+lëvizjen e lirë, gjë që është reflektuar në numrin e turistëve te huaj, turistët
+Shqiptarë kanë pësuar rritje me një ritëm të ngjashëm sikurse para pandemisë.
 
 
 ## Referencat
