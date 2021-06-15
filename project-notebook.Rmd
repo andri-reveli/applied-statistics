@@ -78,7 +78,6 @@ Referencë [tabela e hyrje-daljeve vjetore].
 
 ### Trendi i hyrje-daljeve në Shqipëri për periudhën 2014-2021 sipas shtetësisë
 
-diagrami
 
 ```{r}
 ggplot(
