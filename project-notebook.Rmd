@@ -39,8 +39,8 @@ currencies = c("GBP", "USD", "EUR", "CHF")
 
 Dihet tashmë që sektori i turizmit është një nga sektorët më me peshë në ekonominë e
 Shqipërisë. Sipas [INSTAT], në periudhën 2016 - 2019 rritja reale e prodhimit të brendshëm
-bruto për sektorin e shërbimeve akomoduese dhe ushqimore ka qenë 14% për cdo vit ose e
-thënë ndryshe për një periudhë 3 vjecare ka patur një rritje me gati 48% PBB-së së këtij
+bruto për sektorin e shërbimeve akomoduese dhe ushqimore ka qenë 14% për çdo vit ose e
+thënë ndryshe për një periudhë 3 vjeçare ka patur një rritje me gati 48% PBB-së së këtij
 sektori. Kjo dëshmon fare mirë për rëndësinë e këtij sektori dhe studime të mëtejshme do
 të duhen ndërmarre duke vlerësuar këtë ecuri tepër pozitive.
 
@@ -125,20 +125,21 @@ dihet, bota edhe Shqipëria u goditën nga pandemia e shkaktuar nga virusi COVID
 kjo solli pengim të udhëtimeve në shumë vende, gjë që sic duket ka goditur rëndë hyrjet
 e shtetasve të huaj, por nga ana tjetër është edhe me interesant fakti se hyrjet e
 shtetasve shqipare janë rritur krahasuar me një vit më parë. Kjo dëshmon për një
-besnikëri për sa i përketë rikthimit të shtetasve shqiptarë në origjinë, gjë që sduhet
-lënë pa u shfrytëzuar, sepse sic dëshmohet ata janë një grup i sigurt dhe mund të jenë
+besnikëri për sa i përketë rikthimit të shtetasve shqiptarë në origjinë, gjë që nuk duhet
+lënë pa u shfrytëzuar, sepse siç dëshmohet ata janë një grup i sigurt dhe mund të jenë
 një faktor që sjell hyrje të qëndrueshme në ekonominë përmes sektorit të
 turizmit.
 
 
-#### Analiza e hyrjeve te shtetasve te huaj ne Shqipvri
+#### Analiza e hyrjeve te shtetasve te huaj ne Shqipëri
 
-Megjithëse sic e përcaktuam më lartë se diaspora shqiptare është një kategori e sigurt që
-do ta vizitojë Shqipërinë, nuk duhen neglizhuar turistët e huaj. Vërtetë, diaspora
+
+Megjithëse, siç e përcaktuam më lartë që diaspora shqiptare është një kategori e sigurt, e cila
+do ta vizitojë Shqipërinë, nuk duhen neglizhuar turistët e huaj. Vërtetë diaspora
 shqiptare sa vjen edhe rritet, por numri i saj është relativisht i vogël kur e krahasojmë
 me potencialin për të sjellë turistë nga vende me popullsi të lartë dhe me pak akses në
 sezonin turistik veror si vendet e Europës nordike, qëndrore dhe lindore. Gjithashtu ia
-vlenë të kemi edhe një pamje më të mirë mbi c'muaj te vitit tentojmë të kemi fluks hyrjesh
+vlenë të kemi edhe një pamje më të mirë mbi cilin muaj të vitit tentojmë të kemi fluks hyrjesh
 nga turistët e huaj.
 
 
@@ -175,7 +176,7 @@ rritje i detyrohet shtimit të turistëve me shtetësi të huaj. Gjithashtu vihe
 kemi shumë pika “outlier” që i korrespondojnë muajve të verës dhe në përgjithësi
 vëzhgimet janë të mënjanuara në të djathtë.
 
-**Shenim**: Vitiet 2016 dhe 2021 kanë shumë pak të dhëna, vetëm 2 muaj saktësisht.
+**Shënim**: Vitiet 2016 dhe 2021 kanë shumë pak të dhëna, vetëm 2 muaj saktësisht.
 
 
 Të dhënat mujore
@@ -198,30 +199,26 @@ ggplot(hyrje_mujore_te_huaj, aes(x = Muaji, y = Vlera, group = Muaji)) +
 Këtu vihet re akoma më mirë ndikimi që sezoni turistik veror ka në të vërtetë. Hyrjet e
 shtetasve fillojnë që të rriten në mënyrë të konsiderueshme në muajin qershor dhe në 2
 muajt pasues kemi një shtim thuajse eksponencial të turistëve të huaj. Ia vlen të
-theksojmë se ekziston njëfare simetrie nqs përjashtojmë muajt korrik edhe gusht. Vihet re
-se qershori edhe shtatori kanë një fluks të ngjashëm turizmi. I njëjti shihet në prill,
+theksojmë se ekziston njëfare simetrie në qoftë se përjashtojmë muajt korrik edhe gusht. Vihet re
+se qershori edhe shtatori kanë një fluks të ngjashëm turizmi. I njëjti fluks shihet në prill,
 maj, tetor, por edhe në muaj me mot të ftohtë nëntor - mars. Kjo dëshmon fare mirë se
-turizmi në Shqipëri është përqëndruar vetëm në sezonin veror edhe muajt e fluksi nuk është
-në nivele jo të krahasueshme. Mund të shtojmë si rekomandim se në pamje të parë ekziston
+turizmi në Shqipëri është përqëndruar vetëm në sezonin veror edhe muajt e fluksit nuk janë
+në nivele jo të krahasueshme. Mund të shtojmë si rekomandim, se në pamje të parë ekziston
 një potencial për zgjatjen me 2 muaj të sezonit turistik, më saktësisht në qershor edhe
-shtator. Politikat e qeverisë qëndrore dhe të bashkive bregdetare mund të fokusohen për
-nxitje të turizmit në muajt në fjalë, këtu nuk përjashtohen edhe operatorët turistik që të
-nxisin turistët e huaj për të vizituar Shqipërinë gjatë këtyre muajve me paketa turistike.
+shtator. Politikat e qeverisë qëndrore dhe të bashkive bregdetare (Saranda, Vlora, Durrësi, Kavaja, Lezha) mund të fokusohen për nxitje të turizmit në muajt në fjalë,POR këtu nuk përjashtohen edhe operatorët turistik që të
+nxisin turistët e huaj për të vizituar Shqipërinë gjatë këtyre muajve me paketat e tyre turistike.
 
 ## Ndikimi i hyrjeve të shtetasve të huaj në kursin e këmbimit valutor
 
 ### Motivim
 
-Nga analiza e mësiperme u pa se ekziston një trend rritës i turistëve të huaj, po ashtu se
+Nga analiza e mësiperme vumë re se ekziston një trend rritës i turistëve të huaj, po ashtu se
 hyrjet e tyre nuk janë të shpërndara në mënyrë të njëtrajtshme gjatë gjithë vitit, por
 ekziston një sezonalitet. Kjo na nxit interesin të shikojmë në qoftë se ka edhe rritje të
 shpenzimeve të këtyre turistëve. Fatkeqësisht nuk ekziston ndonjë databazë që të na japë
 një përgjigje “të lehtë” për sa i përketë të dhënave të shpenzimeve individuale për
-secilin turist, por kjo s’na pengon ta analizojmë bazuar në disa faktore faktorë
-shoqërues. Nga parimet bazë të ekonomisë dimë se rritja e sasisë së nje valute ne treg
-sjell rëniën e vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta
-kryesore si paundi britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga
-zviceriane (CHF).
+secilin turist, por kjo nuk na pengon ta analizojmë bazuar në disa faktorë shoqërues.
+Nga parimet bazë të ekonomisë, dimë se rritja e sasisë së një valute në treg sjell rëniën e vlerës së saj. Prandaj kemi zgjedhur të marrim në shqyrtim disa valuta kryesore si paundi britanik (GBP), euro (EUR), dollari amerikan (USD) dhe franga zviceriane (CHF).
 
 ### Analiza
 
@@ -350,11 +347,11 @@ cor.test(x = df$hyrje, y = df$usd)
 
 ```
 
-### Perfundime
+### Përfundime
 
 Në testet e mësiperme për secilën prej valutave është marrë mesatarja mujore, bazuar në të
 dhënat e marra nga Banka e Shqipërisë dhe është krahasuar përkundrejt mesatares së hyrjeve
-mujore të turistëve të huaj duke përdorur testin e korrelacionit të Pirsonit
+mujore të turistëve të huaj duke përdorur testin e korrelacionit të Pirsonit.
 
 Nga të dhënat e marra shihet se për vlera &lt; 600.000 hyrje të turistëve të huaj në një
 muaj kursi i këmbimit për valutat e marra në shqyrtim bie pothuajse në mënyrë lineare. Për
@@ -368,7 +365,7 @@ zbritës është:
 | CHF (Franga zviceriane) | 74,21%       |
 | USD (Dollar amerikan)   | 68,60%       |
 
-E thënë ndryshe vlera e kursit të këmbimit të GBP-së është shumë më e ndjeshme ndaj
+E thënë ndryshe, vlera e kursit të këmbimit të GBP-së është shumë më e ndjeshme ndaj
 sezonit krahasuar me valutat e tjera, kurse USD-ja ndikohet më pak nga të gjthë monedhat e
 tjera, por gjithsesi mbetet në nivele të krahasueshme me EUR dhe CHF.
 
@@ -382,13 +379,12 @@ konsumit e shkaktuar prej sezonit turistik.
 
 Referencë [kursi i kembimit valutor].
 
-## Vleresimi i neteve te qendrimit sipas tremujorve
+## Vlerësimi i netëve të qëndrimit sipas tremujorve
 
 ### Motivim
 
-// TODO
-Na i intereson te ndertojme nje interval besimi per netet e qendrimit qe nje turist
-shqiptar apo i huaj qendron ne nje hotel.
+Një ndër elementët që na intereson të ndërtojmë, është një interval besimi për netët e qëndrimit që një turist shqiptar apo i huaj qëndron në një hotel, pasi ka një ndikim të drejëpërdrejtë në ekonomi. Por gjithashtu për të dalluar se kur ky numër pëson rritje/ulje në bazë të lëvizjeve që rezidentët dhe jorezidentët kryejnë. 
+Më poshtë janë vendosur të dhënat që këta individë kanë realizuar çdo tremujor nga viti 2018 deri në trejmuojrin e parë të 2021.
 
 ```{r}
 nete_qendrimi <- read_excel("~/projects/applied-statistics/datasets/nete-qendrimi.xlsx", 
@@ -434,30 +430,32 @@ for (i in 1:4) {
 }
 ```
 
-### Perfundime
+### Përfundime
 
-**Shenim**: intervali i besimit per jorezidentet ne tremujorin e dyte merr vlere negative
-prej te dhenave te tremujorit te dyte 2020. Sic dihet kufizimet e pandemise kufizuan hrjet
-ne Shqiperi dhe kjo shkakton qe testi statistikor per kete vezhgim te marri vlere te
-palejuar. Gjithashtu ne vitin 2020, sic u pa edhe ne grafikun nr 1, pati shume here me pak
-turiste te huaj gje qe shkakton luhatje te medha per kategorine jorezident.
+**Shënim**: Intervali i besimit për jorezidentët në tremujorin e dytë merr vlerë negative
+prej të dhënave të tremujorit të dytë 2020. Siç dihet kufizimet e pandemisë kufizuan hyrjet
+në Shqipëri dhe kjo shkakton që testi statistikor për këtë vëzhgim të marri vlerë të
+palejuar. Gjithashtu në vitin 2020, siç u pa edhe në grafikun nr.1, pati shumë herë më pak
+turistë të huaj gjë që shkakton luhatje të mëdha për kategorinë jorezident.
 
-Per rrjedhoje vetem kategoria e pushuesve rezident ia vlen te analizohet prej sasise se
-pakte te dhenave dhe ndikimit teper te madh te pandemise mbi pushuesit e huaj. Duke marre
-nje nivel besimi 95% vihet re se pushuesit rezidente ne Shqiperi shpenzojne midis 100.000
-deri ne 200.000 nete ne hotelet e vendit ne periudhen jashte sezonit veror, kurse gjate
-ketij te fundit midis 400.000 dhe 500.000 nete. Sikur te merrnim nje cmim arbitrar
-minimal 10\$ per nete qendrimi mund te presim nje konsum prej 4 milione deri ne 5
-milione \$ vetem si pasoje e turizmit te brendshem. Ky perfundim na lejon te besojme ne
-potencialin e sektorit te turizmit ne qofte se do te kishim nje orientim me te forte per
-nxitjen e metejshme te ketij sektori.
+Për rrjedhojë, vetëm kategoria e pushuesve rezident ia vlen të analizohet prej sasisë së
+paktë të dhënave dhe ndikimit tepër të madh të pandemisë mbi pushuesit e huaj. Duke marrë
+një nivel besimi 95% vihet re se pushuesit rezidentë në Shqipëri shpenzojnë midis 100.000
+deri në 200.000 netë në hotelet e vendit në periudhën jashtë sezonit veror, kurse gjatë
+këtij të fundit midis 400.000 dhe 500.000 netë. Sikur të merrnim një çmim arbitrar
+minimal 10\$ për netë qëndrimi mund të presim një konsum prej 4 milionë deri në 5
+milione\$ vetëm si pasojë e turizmit të brendshëm. Ky përfundim na lejon të besojmë në
+potencialin e sektorit të turizmit në qofte se do të kishim nje orientim më të fortë për
+nxitjen e mëtejshme të këtij sektori.
 
-Reference [nete qendrimi]
+Referencë [nete qendrimi]
 
 
-## Perfundime dhe rekomandime
+## Përfundime dhe rekomandime
 
-// TODO
+Për vendin tonë, dimë fare mirë që një ndër faktorët, të cilët ndikojnë në zhvillimin e ekonomisë shqiptare është sektori I turizmit dhe ka një potencial të lartë për t’u rritur në vitet e ardhshme për shkak të të gjithë atraksioneve apo mundësive që vendi ynë ofron, duke bërë në këtë mënyrë që Shqipëria të ofrojë lloje të ndryshme turizmi (bregdetar, malor, historik, shëndetsor). 
+Nga analizat e bëra me sipër në studimin tonë, vumë re se numri I turistëve (të huaj dhe me shtetësi shqiptare) sa vjen dhe shtohet me kalimin e viteve, duke rritur kështu përqindjen që zë ky sektor në ekonominë shqiptare. Gjithashtu këtë ndikim mund ta vëmë re te influenca që këta turistë kanë të kursi I këmbimit valutor, ku ndërvite me rritjen e numrit të turistëve, vihet re që vlera e këtyre parave (GBP, EUR, USD, CHF) pëson një ulje të njëtrajtëshme. Kjo rënie ndodh sepse rritja e sasisë së nje valute ne treg sjell rëniën e vlerës së saj. Gjithashtu shtimi i hyrjeve të turistëve të huaj ka sjellë shtimin e valutave të huaja në tregun shqiptar, që interpretohet si rritje e konsumit e shkaktuar prej sezonit turistik. 
+
 
 
 ## Referencat
