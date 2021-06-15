@@ -494,7 +494,6 @@ Shqiptarë kanë pësuar rritje me një ritëm të ngjashëm sikurse para pandem
 
 1. [http://instat.gov.al/media/8157/tab-4.xlsx](http://instat.gov.al/media/8157/tab-4.xlsx)
 2. [http://instat.gov.al/media/8157/tab-2.xlsx](http://instat.gov.al/media/7951/tab-2.xlsx)
-3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html]
-(https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
+3. [https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html](https://www.bankofalbania.org/Statistikat/Statistikat_e_Sektorit_te_Jashtem/Kursi_i_kembimit/Kursi_mesatar_mujor.html)
 4. [instat.gov.al/media/8287/tab-3.xlsx](instat.gov.al/media/8287/tab-3.xlsx)
 5. [instat.gov.al/media/8381/t1_2021-tab_2_net%C3%AB-q%C3%ABndrime.xlsx](instat.gov.al/media/8381/t1_2021-tab_2_net%C3%AB-q%C3%ABndrime.xlsx)
